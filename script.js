@@ -1,10 +1,21 @@
-var colorSchemes = [["#FF736C", "#FFE600"],
-["#00CFFF", "#FF736C"],
-["#FFE600", "#00CFFF"]
+const colorSchemes = [
+  ["#00CFFF", "#FF736C"],
+  ["#FFE600", "#00CFFF"],
+  ["#f72585", "#7209b7"],
+  ["#1B9CFC", "#55E6C1"],
+  ["#4b4e6d", "#fc4a1a"],
+  ["#d9f2d2", "#89c2a9"],
+  ["#54A0FF", "#D399FF"],
+  ["#00B4DB", "#0083B0"],
+  ["#5F2C82", "#49A09D"],
+  ["#FFC8B4", "#FFA07A"],
+  ["#F1F1F1", "#333333"]
 ];
 
-var index = 0;
-var items = document.querySelectorAll('.animation-item');
+
+
+let index = 0;
+const items = document.querySelectorAll('.animation-item');
 
 function changeColor() {
   for (var i = 0; i < items.length; i++) {
@@ -20,16 +31,18 @@ setInterval(changeColor, 1000);
 
 window.addEventListener('scroll', function () {
   var scrollPosition = window.scrollY;
-  var targetDivPosition = document.getElementById('show-header-from-here').offsetTop;
-  if (scrollPosition >= targetDivPosition) {
-    document.querySelector('.header').style.display = 'flex';
-  } else if (scrollPosition < targetDivPosition) {
-    document.querySelector('.header').style.display = 'none';
-  }
+  var targetDivPosition = document.querySelector('.second-page').offsetTop;
+  const span = document.querySelector('.underline--magical');
+  underlineAnimation(span)
 });
 
 function scrollToBottom() {
-  console.log("test")
-  document.documentElement.scrollTop = document.documentElement.scrollHeight;
-  document.body.scrollTop = document.body.scrollHeight;
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth"
+  });
+}
+
+function underlineAnimation(span) {
+  setTimeout(function () { span.style.backgroundSize = "100% 88%" }, 1000);
 }
