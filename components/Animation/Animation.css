@@ -1,0 +1,56 @@
+.animation-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+}
+
+.animation-item {
+    position: absolute;
+    border-radius: 20% 80% 40% 60% / 30% 50% 70% 90%;
+    mix-blend-mode: overlay;
+    animation: move 4s ease-in-out infinite alternate;
+    height: 100%;
+    width: 100%;
+    transition: background 0.75s;
+}
+
+.animation-item:nth-of-type(2) {
+    height: 75%;
+    width: 75%;
+    mix-blend-mode: color-dodge;
+    animation-delay: 1s;
+    transition: background 0.75s;
+}
+
+.animation-item:nth-of-type(3) {
+    height: 50%;
+    width: 50%;
+    mix-blend-mode: screen;
+    animation-delay: 2s;
+    transition: background 0.75s;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    25% {
+        transform: translateX(50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(50%) translateY(50%);
+    }
+
+    75% {
+        transform: translateX(0) translateY(50%);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
