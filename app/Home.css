@@ -14,9 +14,45 @@
     width: 100vw;
     max-width: 100%;
     min-height: fit-content;
+    background: white;
+}
+
+.screen-twoGradientLayer {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 32%, rgba(181, 186, 186, 1) 100%);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 2s ease-in;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 3%, #a2cfc9 100%);
+}
+
+.screen-twoGradientLayerVisible {
+    opacity: 1;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 20px;
+    font-size: large;
+}
+
+.link {
+    cursor: pointer;
+    padding: 5px;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0em;
+    background-position: 0 88%;
+    transition: background-size 0.2s ease-in;
+}
+
+.link:hover {
+    background-size: 100% 88%;
 }
 
 .down-icon {
@@ -45,6 +81,6 @@
     }
 }
 
-.scroll-icon{
-transition: all 0.5s ease-out;
+.scroll-icon {
+    transition: all 0.5s ease-out;
 }
