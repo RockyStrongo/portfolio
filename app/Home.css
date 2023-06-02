@@ -1,4 +1,13 @@
-.screen-one {
+.screen {
+    height: 100vh;
+    width: 100vw;
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
     height: 100vh;
     width: 100vw;
     max-height: 100%;
@@ -7,80 +16,51 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: #f8fafc;
+    transition: 2s height;
+    filter: drop-shadow(1px 1px 4px #75c5be);
 }
 
-.screen-two {
-    height: 100vh;
-    width: 100vw;
-    max-width: 100%;
-    min-height: fit-content;
-    background: white;
+.hero-splitted {
+    height: 50vh;
 }
 
-.screen-twoGradientLayer {
+.content {
+    height: 0%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 3%, #8eaad4 100%);
+    transition: 2s height;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 2s ease-in;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 3%, #a2cfc9 100%);
-}
-
-.screen-twoGradientLayerVisible {
-    opacity: 1;
-}
-
-.links {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    margin-top: 20px;
-    font-size: large;
-}
-
-.link {
-    cursor: pointer;
-    padding: 5px;
-    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 0em;
-    background-position: 0 88%;
-    transition: background-size 0.2s ease-in;
-}
-
-.link:hover {
-    background-size: 100% 88%;
-}
-
-.down-icon {
-    animation: scale-up 1s ease-in-out infinite;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 10px;
-    cursor: pointer;
 }
 
-@keyframes scale-up {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.5);
-
-    }
-
-    100% {
-        transform: scale(1);
-    }
+.content-opened {
+    height: 50vh;
 }
 
-.scroll-icon {
-    transition: all 0.5s ease-out;
+@media screen and (min-width: 800px) {
+
+    /* CSS styles for screens with a width of 800px or larger */
+    .screen {
+        flex-direction: row;
+    }
+
+    .hero-splitted {
+        width: 50vw;
+        height: 100vw;
+    }
+
+    .content {
+        width: 0%;
+        transition: 2s width;
+    }
+
+    .content-opened {
+        width: 50vw;
+        height: 100vh;
+    }
+
+    .hero {
+        transition: 2s width;
+    }
 }
