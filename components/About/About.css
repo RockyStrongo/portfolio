@@ -1,0 +1,70 @@
+.about {
+    margin: 5em;
+    height: 0%;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: 1s all;
+    display: flex;
+    align-items: center;
+}
+
+.about-visible {
+    height: 100%;
+    white-space: pre-wrap;
+}
+
+.about-content {
+    height: fit-content;
+}
+
+.about-icons {
+    width: 0%;
+    padding-top: 1em;
+    margin: 0 auto;
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+    transition: all 1s;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.about-iconsVisible {
+    width: 100%;
+}
+
+.about-icon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    transition: all 0.25s;
+    filter: drop-shadow(1px 1px 4px #75c5be);
+}
+
+.about-icon:hover {
+    width: 45px;
+    height: 45px;
+}
+
+.cv-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.about-iconSubtext {
+    font-size: xx-small;
+    width: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.about-iconSubtextVisible {
+    width: 45px;
+    max-width: 45px;
+    overflow: unset;
+    white-space: pre-wrap;
+    text-align: center;
+}
