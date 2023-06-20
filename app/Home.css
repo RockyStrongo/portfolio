@@ -1,14 +1,20 @@
 .screen {
-    min-height: 100%;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
+
 
 .hero {
     position: relative;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,6 +23,7 @@
     transition: 2s height;
     /* filter: drop-shadow(1px 1px 4px #75c5be); */
 }
+
 
 .hero-splitted {
     height: 35vh;
@@ -63,15 +70,14 @@
 }
 
 @media screen and (min-width: 800px) {
-
     /* CSS styles for screens with a width of 800px or larger */
     .screen {
         flex-direction: row;
     }
 
     .hero-splitted {
-        width: 50vw;
-        height: 100vw;
+        width: 50%;
+        height: 100%;
     }
 
     .content {
@@ -80,8 +86,8 @@
     }
 
     .content-opened {
-        width: 50vw;
-        height: 100vh;
+        width: 50%;
+        height: 100%;
     }
 
     .hero {
