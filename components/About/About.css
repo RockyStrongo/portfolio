@@ -38,7 +38,7 @@
     width: 30px;
     height: 30px;
     transition: all 0.25s;
-    filter: drop-shadow(1px 1px 4px #75c5be);
+    /* filter: drop-shadow(1px 1px 4px #75c5be); */
 }
 
 .about-icon:hover {

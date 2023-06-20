@@ -25,17 +25,12 @@ export function About() {
                 <div className={`about-icons ${iconsAreVisible ? "about-iconsVisible" : null}`}>
                     <Image className='about-icon' src="images/linkedin.svg" alt="linkedin-icon" width="30" height="30" />
                     <Image className='about-icon' src="images/github.svg" alt="github-icon" width="30" height="30" />
-                    <div className='cv-icon'>
                         <Image className='about-icon'
                             src="images/circle-down-solid.svg"
                             alt="download-cv-icon"
                             width="30"
                             height="30"
-                            onMouseEnter={() => setCvSubtextIsVisible(true)}
-                            onMouseLeave={() => setCvSubtextIsVisible(false)}
                         />
-                        <div className={`about-iconSubtext ${cvSubtextIsVisible ? "about-iconSubtextVisible" : null}`}>Dowload CV</div>
-                    </div>
                 </div>
 
             </div>

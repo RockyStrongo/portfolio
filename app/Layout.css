@@ -4,10 +4,11 @@
   --font-color: darkslategray;
 }
 
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --hero-bg-color: rgb(36, 45, 54);
-    --content-bg-color: linear-gradient(to bottom, rgb(83, 88, 92) 3%, #18202c 100%);
+    --hero-bg-color: #18202c;
+    --content-bg-color: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
     --font-color: rgb(248, 250, 252);
   }
 }
@@ -48,7 +49,7 @@ a {
   background-repeat: no-repeat;
   background-size: 100% 0em;
   background-position: 0 88%;
-  transition: all 0.2s ease-in;
+  transition: background-size 0.2s ease-in;
 }
 
 .link:hover {

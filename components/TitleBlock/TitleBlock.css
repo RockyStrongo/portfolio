@@ -6,10 +6,8 @@
     display: flex;
     white-space: nowrap;
     overflow: hidden;
-    transition: 1.5s all;
+    transition: 1.5s height;
 }
-
-
 
 .title-blockVisible {
     height: 200px;

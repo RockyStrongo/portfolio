@@ -30,8 +30,8 @@ export default function Home() {
 
 
       function setToDark() {
-        root.style.setProperty('--hero-bg-color', 'rgb(36, 45, 54)');
-        root.style.setProperty('--content-bg-color', 'linear-gradient(to bottom, rgb(83, 88, 92) 3%, #18202c 100%)');
+        root.style.setProperty('--hero-bg-color', '#18202c');
+        root.style.setProperty('--content-bg-color', 'linear-gradient(147deg, #000000 0%, #2c3e50 74%)');
         root.style.setProperty('--font-color', 'rgb(248, 250, 252)');
       }
 
@@ -78,10 +78,11 @@ export default function Home() {
         <div className={`hero ${screenSplitted ? `hero-splitted` : null}`}>
           <Animation isBlurred={animationIsBlurred} />
           <TitleBlock isVisible={titleIsVisible} isSmall={screenSplitted} onLinkClick={handleLinkClick} links={links} activeLink={activeLink ?? ""} />
+
           <div className="theme-switcher">
-            <button onClick={() => { setTheme('dark') }}>dark</button>
-            <button onClick={() => { setTheme('light') }}>light</button>
-            <button onClick={() => { setTheme('auto') }}>auto</button>
+            <div className={`theme-item ${theme === 'dark' && 'theme-itemSelected'}`} onClick={() => { setTheme('dark') }}>dark</div>
+            <div className={`theme-item ${theme === 'auto' && 'theme-itemSelected'}`} onClick={() => { setTheme('auto') }}>auto</div>
+            <div className={`theme-item ${theme === 'light' && 'theme-itemSelected'}`} onClick={() => { setTheme('light') }}>light</div>
           </div>
         </div>
         <div className={`content ${screenSplitted ? `content-opened` : null}`}>
