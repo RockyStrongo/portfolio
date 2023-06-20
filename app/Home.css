@@ -1,8 +1,6 @@
 .screen {
-    height: 100vh;
-    width: 100vw;
-    max-height: 100vh;
-    max-width: 100vw;
+    min-height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -11,8 +9,6 @@
     position: relative;
     height: 100vh;
     width: 100vw;
-    max-height: 100vh;
-    max-width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +42,7 @@
     align-items: center;
     gap: 5px;
     padding: 0 8px 0 8px;
-    bottom: 10px;
+    bottom: 15px;
     border: solid 1px;
     border-radius: 10px;
     font-size: x-small;
