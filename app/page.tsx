@@ -27,6 +27,9 @@ export default function Home() {
     () => {
       const root = document.documentElement;
 
+      //dynamically setting the page height to avoid bugs with 100vh in mobile
+      root.style.setProperty('--doc-height', `${window.innerHeight}px`)
+
       function setToDark() {
         root.style.setProperty('--hero-bg-color', '#18202c');
         root.style.setProperty('--content-bg-color', 'linear-gradient(147deg, #000000 0%, #2c3e50 74%)');
