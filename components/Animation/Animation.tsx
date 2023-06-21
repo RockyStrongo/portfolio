@@ -9,7 +9,7 @@ type AnimationProps = {
 export function Animation({isBlurred}: AnimationProps) {
 
     return (
-        <div className={`animation-container ${isBlurred ? `blurred` : null }`}>
+        <div className={`animation-container ${isBlurred && `blurred` }`}>
             <div className="animation-item"  ></div>
             <div className="animation-item"  ></div>
             <div className="animation-item"  ></div>

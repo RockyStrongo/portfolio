@@ -46,25 +46,15 @@
     height: 45px;
 }
 
-.cv-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.about-content {
+    font-size: small;
 }
 
+@media screen and (min-width: 800px) {
 
-.about-iconSubtext {
-    font-size: xx-small;
-    width: 0px;
-    white-space: nowrap;
-    overflow: hidden;
-}
+    /* CSS styles for screens with a width of 800px or larger */
 
-.about-iconSubtextVisible {
-    width: 45px;
-    max-width: 45px;
-    overflow: unset;
-    white-space: pre-wrap;
-    text-align: center;
+    .about-content {
+        font-size: unset;
+    }
 }

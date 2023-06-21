@@ -72,10 +72,6 @@
     font-weight: bold;
 }
 
-.about-content {
-    font-size: small;
-}
-
 @media screen and (min-width: 800px) {
 
     /* CSS styles for screens with a width of 800px or larger */

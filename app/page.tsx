@@ -25,9 +25,7 @@ export default function Home() {
 
   useEffect(
     () => {
-
       const root = document.documentElement;
-
 
       function setToDark() {
         root.style.setProperty('--hero-bg-color', '#18202c');
@@ -75,7 +73,7 @@ export default function Home() {
   return (
     <main>
       <div className="screen">
-        <div className={`hero ${screenSplitted ? `hero-splitted` : null}`}>
+        <div className={`hero ${screenSplitted && `hero-splitted`}`}>
           <Animation isBlurred={animationIsBlurred} />
           <TitleBlock isVisible={titleIsVisible} isSmall={screenSplitted} onLinkClick={handleLinkClick} links={links} activeLink={activeLink ?? ""} />
 
@@ -85,7 +83,8 @@ export default function Home() {
             <div className={`theme-item ${theme === 'light' && 'theme-itemSelected'}`} onClick={() => { setTheme('light') }}>light</div>
           </div>
         </div>
-        <div className={`content ${screenSplitted ? `content-opened` : null}`}>
+
+        <div className={`content ${screenSplitted && `content-opened`}`}>
           {activeLink === "About" ? (
             <About />
           ) : activeLink === "Projects" ? (

@@ -19,7 +19,7 @@ export function TitleBlock({ isVisible, isSmall, onLinkClick, links, activeLink 
     }
 
     return (
-        <div className={`title-block ${isVisible ? ` title-blockVisible` : null}`}>
+        <div className={`title-block ${isVisible && ` title-blockVisible`}`}>
             <h1 className="title">
                 Hello ! My name is Simon Ferlat
             </h1>
@@ -29,7 +29,7 @@ export function TitleBlock({ isVisible, isSmall, onLinkClick, links, activeLink 
                         return (
                             <span
                                 key={index}
-                                className={`link ${IsLinkActive(link) ? "link-active" : null}`}
+                                className={`link ${IsLinkActive(link) && "link-active"}`}
                                 onClick={() => handleClick(link)}>
                                 {link}
                             </span>
