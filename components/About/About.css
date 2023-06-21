@@ -47,8 +47,7 @@
 }
 
 .about-content {
-    font-size: small;
-    background-color: red;
+    font-size: 13px;
 }
 
 @media screen and (min-width: 800px) {
@@ -57,6 +56,5 @@
 
     .about-content {
         font-size: medium;
-        background-color: blue;
     }
 }
