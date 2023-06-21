@@ -10,7 +10,7 @@
 }
 
 .title-blockVisible {
-    height: 200px;
+    height: 100px;
 }
 
 .title {
@@ -21,14 +21,11 @@
     font-family: RedHatMono;
     margin: 0 auto;
     padding: 0.3em;
-    margin-top: 25px;
+    /* margin-top: 25px; */
     transition: 1s all;
     white-space: pre-wrap;
     text-align: center;
-}
-
-.title-small {
-    font-size: small;
+    font-size: large;
 }
 
 .underline--magical {
@@ -47,4 +44,17 @@
 .links {
     display: flex;
     gap: 0.5em;
+    font-size: small;
+}
+
+@media screen and (min-width: 800px) {
+
+    /* CSS styles for screens with a width of 800px or larger */
+    .title {
+        font-size: xx-large;
+    }
+
+    .links {
+        font-size: medium;
+    }
 }

@@ -79,7 +79,7 @@ export default function Home() {
           <Animation isBlurred={animationIsBlurred} />
           <TitleBlock isVisible={titleIsVisible} isSmall={screenSplitted} onLinkClick={handleLinkClick} links={links} activeLink={activeLink ?? ""} />
 
-          <div className="theme-switcher">
+          <div className={`theme-switcher ${titleIsVisible && 'theme-switcherVisible'}`}>
             <div className={`theme-item ${theme === 'dark' && 'theme-itemSelected'}`} onClick={() => { setTheme('dark') }}>dark</div>
             <div className={`theme-item ${theme === 'auto' && 'theme-itemSelected'}`} onClick={() => { setTheme('auto') }}>auto</div>
             <div className={`theme-item ${theme === 'light' && 'theme-itemSelected'}`} onClick={() => { setTheme('light') }}>light</div>

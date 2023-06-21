@@ -7,6 +7,8 @@
     align-items: center;
     height: 150px;
     width: 150px;
+    max-height: 70px;
+    max-width: 70px;
     transition: 5s all;
 }
 
@@ -64,5 +66,13 @@
 
     100% {
         transform: translateX(0) translateY(0);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    /* CSS styles for screens with a width of 800px or larger */
+    .animation-container {
+        max-height: unset;
+        max-width: unset;
     }
 }
