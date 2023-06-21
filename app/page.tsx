@@ -7,6 +7,7 @@ import "./Home.css"
 
 export default function Home() {
 
+  const [loading, setLoading] = useState<boolean>(true)
   const [titleIsVisible, setTitleIsVisible] = useState<boolean>(false)
   const [screenSplitted, setScreenSplitted] = useState<boolean>(false)
   const [animationIsBlurred, setAnimationBlurred] = useState<boolean>(false)
@@ -15,6 +16,11 @@ export default function Home() {
 
   useEffect(
     () => {
+      const root = document.documentElement;
+      //dynamically setting the page height to avoid bugs with 100vh in mobile
+      root.style.setProperty('--doc-height', `${window.innerHeight}px`)
+      setLoading(false)
+
       const timeOut = setTimeout(() => {
         setTitleIsVisible(true);
         setAnimationBlurred(true)
@@ -25,10 +31,8 @@ export default function Home() {
 
   useEffect(
     () => {
+      //manage theme changes
       const root = document.documentElement;
-
-      //dynamically setting the page height to avoid bugs with 100vh in mobile
-      root.style.setProperty('--doc-height', `${window.innerHeight}px`)
 
       function setToDark() {
         root.style.setProperty('--hero-bg-color', '#18202c');
@@ -75,7 +79,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="screen">
+      {!loading ? <div className="screen">
         <div className={`hero ${screenSplitted && `hero-splitted`}`}>
           <Animation isBlurred={animationIsBlurred} />
           <TitleBlock isVisible={titleIsVisible} isSmall={screenSplitted} onLinkClick={handleLinkClick} links={links} activeLink={activeLink ?? ""} />
@@ -97,7 +101,7 @@ export default function Home() {
           ) : null}
         </div>
 
-      </div>
+      </div> : null}
     </main>
   )
 }
