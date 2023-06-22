@@ -1,16 +1,13 @@
 .about {
     margin: 5em;
-    height: 0%;
-    white-space: nowrap;
-    overflow: hidden;
-    transition: all 1s;
+    opacity: 0;
+    transition: opacity 1s;
     display: flex;
     align-items: center;
 }
 
 .about-visible {
-    height: 100%;
-    white-space: pre-wrap;
+    opacity: 1;
 }
 
 .about-content {
