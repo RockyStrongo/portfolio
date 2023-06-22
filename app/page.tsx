@@ -67,14 +67,6 @@ export default function Home() {
     }, [theme]
   )
 
-  useEffect(
-    () => {
-      //if firstTime clicking, content transition should be longer, else, should be 1seconds
-      linkClickCount === 1 ? root.style.setProperty('--content-transition', '9s height') : root.style.setProperty('--content-transition', '1s height')
-
-    }, [linkClickCount]
-  )
-
   const handleLinkClick = (link: String) => {
     setLinkClickCount(linkClickCount + 1)
     setScreenSplitted(true)
@@ -102,7 +94,7 @@ export default function Home() {
 
         <div className={`content ${screenSplitted && `content-opened`}`}>
           {activeLink === "About" ? (
-            <About />
+            <About firstClick={linkClickCount == 1 ? true : false} />
           ) : activeLink === "Projects" ? (
             <p>Projects content</p>
           ) : activeLink === "Contact" ? (

@@ -3,7 +3,11 @@ import Link from 'next/link'
 import './About.css'
 import Image from 'next/image'
 
-export function About() {
+type AboutProps = {
+    firstClick: boolean
+}
+
+export function About({ firstClick }: AboutProps) {
 
     const [textIsVisible, setTextIsVisible] = useState(false)
     const [iconsAreVisible, setIconsAreVisible] = useState(false)
@@ -11,7 +15,9 @@ export function About() {
 
     useEffect(
         () => {
-            setTextIsVisible(true);
+            firstClick ? setTimeout(() => {
+                setTextIsVisible(true)
+            }, 1500) : setTextIsVisible(true);
             setIconsAreVisible(true);
         }, []
     )
