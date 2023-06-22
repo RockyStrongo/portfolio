@@ -8,11 +8,14 @@ import "./Home.css"
 export default function Home() {
 
   const [loading, setLoading] = useState<boolean>(true)
+  const [linkClickCount, setLinkClickCount] = useState<number>(0)
   const [titleIsVisible, setTitleIsVisible] = useState<boolean>(false)
   const [screenSplitted, setScreenSplitted] = useState<boolean>(false)
   const [animationIsBlurred, setAnimationBlurred] = useState<boolean>(false)
   const [activeLink, setActiveLink] = useState<String>()
   const [theme, setTheme] = useState<'auto' | 'dark' | 'light'>('auto')
+
+  const root = document.documentElement;
 
   useEffect(
     () => {
@@ -32,8 +35,6 @@ export default function Home() {
   useEffect(
     () => {
       //manage theme changes
-      const root = document.documentElement;
-
       function setToDark() {
         root.style.setProperty('--hero-bg-color', '#18202c');
         root.style.setProperty('--content-bg-color', 'linear-gradient(147deg, #000000 0%, #2c3e50 74%)');
@@ -66,7 +67,16 @@ export default function Home() {
     }, [theme]
   )
 
+  useEffect(
+    () => {
+      //if firstTime clicking, content transition should be longer, else, should be 1seconds
+      linkClickCount === 1 ? root.style.setProperty('--content-transition', '9s height') : root.style.setProperty('--content-transition', '1s height')
+
+    }, [linkClickCount]
+  )
+
   const handleLinkClick = (link: String) => {
+    setLinkClickCount(linkClickCount + 1)
     setScreenSplitted(true)
     setActiveLink(link)
   }
@@ -83,7 +93,6 @@ export default function Home() {
         <div className={`hero ${screenSplitted && `hero-splitted`}`}>
           <Animation isBlurred={animationIsBlurred} />
           <TitleBlock isVisible={titleIsVisible} isSmall={screenSplitted} onLinkClick={handleLinkClick} links={links} activeLink={activeLink ?? ""} />
-
           <div className={`theme-switcher ${titleIsVisible && 'theme-switcherVisible'}`}>
             <div className={`theme-item ${theme === 'dark' && 'theme-itemSelected'}`} onClick={() => { setTheme('dark') }}>dark</div>
             <div className={`theme-item ${theme === 'auto' && 'theme-itemSelected'}`} onClick={() => { setTheme('auto') }}>auto</div>
@@ -101,7 +110,7 @@ export default function Home() {
           ) : null}
         </div>
 
-      </div> : null}
+      </div> : <div className="loading" />}
     </main>
   )
 }

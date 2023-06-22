@@ -1,3 +1,14 @@
+.loading {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--hero-bg-color);
+}
+
 .screen {
     height: var(--doc-height);
     width: 100%;
@@ -36,7 +47,7 @@
     align-items: center;
     justify-content: center;
     font-size: small;
-  }
+}
 
 .content-opened {
     height: 65%;
