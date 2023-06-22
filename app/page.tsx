@@ -15,7 +15,6 @@ export default function Home() {
   const [activeLink, setActiveLink] = useState<String>()
   const [theme, setTheme] = useState<'auto' | 'dark' | 'light'>('auto')
 
-  const root = document.documentElement;
 
   useEffect(
     () => {
@@ -34,6 +33,7 @@ export default function Home() {
 
   useEffect(
     () => {
+      const root = document.documentElement;
       //manage theme changes
       function setToDark() {
         root.style.setProperty('--hero-bg-color', '#18202c');

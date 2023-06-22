@@ -11,7 +11,6 @@ export function About({ firstClick }: AboutProps) {
 
     const [textIsVisible, setTextIsVisible] = useState(false)
     const [iconsAreVisible, setIconsAreVisible] = useState(false)
-    const [cvSubtextIsVisible, setCvSubtextIsVisible] = useState(false)
 
     useEffect(
         () => {
@@ -19,7 +18,7 @@ export function About({ firstClick }: AboutProps) {
                 setTextIsVisible(true)
             }, 1500) : setTextIsVisible(true);
             setIconsAreVisible(true);
-        }, []
+        }, [firstClick]
     )
 
     return (
