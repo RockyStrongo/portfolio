@@ -21,7 +21,6 @@
     flex-direction: column;
     background-color: var(--hero-bg-color);
     transition: 2s height;
-    /* filter: drop-shadow(1px 1px 4px #75c5be); */
 }
 
 
@@ -37,7 +36,7 @@
     align-items: center;
     justify-content: center;
     font-size: small;
-}
+  }
 
 .content-opened {
     height: 65%;
@@ -49,11 +48,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 5px;
-    padding: 0 8px 0 8px;
-    bottom: 15px;
-    border: solid 1px;
-    border-radius: 10px;
+    gap: 0.5rem;
+    padding: 0 0.5rem 0 0.5rem;
+    bottom: 1.5rem;
+    border: solid 0.1rem;
+    border-radius: 1rem;
     font-size: xx-small;
     opacity: 0;
     transition: opacity 1.5s;

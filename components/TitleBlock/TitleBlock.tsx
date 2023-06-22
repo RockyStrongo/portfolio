@@ -19,6 +19,7 @@ export function TitleBlock({ isVisible, isSmall, onLinkClick, links, activeLink 
     }
 
     return (
+        <div className='title-blockWrapper'>
         <div className={`title-block ${isVisible && ` title-blockVisible`}`}>
             <h1 className="title">
                 Hello ! My name is Simon Ferlat
@@ -38,6 +39,8 @@ export function TitleBlock({ isVisible, isSmall, onLinkClick, links, activeLink 
                     )
                 }
             </div>
+        </div>
+
         </div>
     )
 

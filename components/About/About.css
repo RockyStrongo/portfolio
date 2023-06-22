@@ -35,15 +35,14 @@
 
 .about-icon {
     cursor: pointer;
-    width: 30px;
-    height: 30px;
+    width: 2rem;
+    height: 2rem;
     transition: all 0.25s;
-    /* filter: drop-shadow(1px 1px 4px #75c5be); */
 }
 
 .about-icon:hover {
-    width: 45px;
-    height: 45px;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 @media screen and (min-width: 800px) {

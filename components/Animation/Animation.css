@@ -5,15 +5,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
-    width: 150px;
-    max-height: 70px;
-    max-width: 70px;
+    height: 5rem;
+    width: 5rem;
     transition: 5s all;
 }
 
 .blurred {
-    filter: blur(4px);
+    filter: blur(0.25rem);
 }
 
 .animation-item {
@@ -28,7 +26,7 @@
     background-position: center center;
     background-repeat: repeat;
     background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 1000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cdefs%3E%3ClinearGradient id=%22b%22 gradientTransform=%22rotate(-45 .5 .5)%22%3E%3Cstop offset=%220%25%22 stop-color=%22%2321D4FD%22%2F%3E%3Cstop offset=%22100%25%22 stop-color=%22%23B721FF%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M825 656.5q-76 156.5-235 152t-320.5-62Q108 689 117 504.5T273.5 236q147.5-84 307-60.5t240 174Q901 500 825 656.5Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22url(%23b)%22 d=%22M825 656.5q-76 156.5-235 152t-320.5-62Q108 689 117 504.5T273.5 236q147.5-84 307-60.5t240 174Q901 500 825 656.5Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-    filter: drop-shadow(1px 1px 4px #75c5be);
+    filter: drop-shadow(0.06rem 0.06rem 0.25rem #75c5be);
 }
 
 .animation-item:nth-of-type(2) {
@@ -72,7 +70,7 @@
 @media screen and (min-width: 800px) {
     /* CSS styles for screens with a width of 800px or larger */
     .animation-container {
-        max-height: unset;
-        max-width: unset;
+        height: 9rem;
+        width: 9rem;
     }
 }

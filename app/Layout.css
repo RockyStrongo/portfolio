@@ -45,7 +45,7 @@ a {
 
 .link {
   cursor: pointer;
-  padding: 5px;
+  padding: 0.4rem;
   background-image: linear-gradient(120deg, #AC2EFF 20%, #5C8EFE 80%);
   background-repeat: no-repeat;
   background-size: 100% 0em;

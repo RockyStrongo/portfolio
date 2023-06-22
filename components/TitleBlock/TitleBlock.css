@@ -1,5 +1,9 @@
-.title-block {
+.title-blockWrapper {
+    height: fit-content;
     z-index: 3;
+}
+
+.title-block {
     flex-direction: column;
     align-items: center;
     height: 0%;
@@ -10,7 +14,7 @@
 }
 
 .title-blockVisible {
-    height: 100px;
+    height: 100%;
 }
 
 .title {
@@ -21,7 +25,6 @@
     font-family: RedHatMono;
     margin: 0 auto;
     padding: 0.3em;
-    /* margin-top: 25px; */
     transition: 1s all;
     white-space: pre-wrap;
     text-align: center;
