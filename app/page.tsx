@@ -81,8 +81,8 @@ export default function Home() {
 
   return (
     <main>
-      {!loading ? <div className="screen">
-        <div className={`hero ${screenSplitted && `hero-splitted`}`}>
+      {!loading ? <div className="h-screen flex ">
+        <div className={`relative h-screen w-full flex justify-center items-center flex-col bg-blue-500 ${screenSplitted && `hero-splitted`}`}>
           <Animation isBlurred={animationIsBlurred} />
           <TitleBlock isVisible={titleIsVisible} isSmall={screenSplitted} onLinkClick={handleLinkClick} links={links} activeLink={activeLink ?? ""} />
           <div className={`theme-switcher ${titleIsVisible && 'theme-switcherVisible'}`}>
