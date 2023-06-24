@@ -33,18 +33,18 @@ export default function Home() {
 
   useEffect(
     () => {
-      const root = document.documentElement;
+      const rootElement = document.documentElement;
       //manage theme changes
       function setToDark() {
-        root.style.setProperty('--hero-bg-color', '#18202c');
-        root.style.setProperty('--content-bg-color', 'linear-gradient(147deg, #000000 0%, #2c3e50 74%)');
-        root.style.setProperty('--font-color', 'rgb(248, 250, 252)');
+        rootElement.style.setProperty('--hero-bg-color', '#18202c');
+        rootElement.style.setProperty('--content-bg-color', 'linear-gradient(147deg, #000000 0%, #2c3e50 74%)');
+        rootElement.style.setProperty('--font-color', 'rgb(248, 250, 252)');
       }
 
       function setToLight() {
-        root.style.setProperty('--hero-bg-color', 'rgb(248, 250, 252)');
-        root.style.setProperty('--content-bg-color', 'linear-gradient(to bottom, rgba(255, 255, 255, 1) 3%, #8eaad4 100%)');
-        root.style.setProperty('--font-color', 'darkslategray');
+        rootElement.style.setProperty('--hero-bg-color', 'rgb(248, 250, 252)');
+        rootElement.style.setProperty('--content-bg-color', 'linear-gradient(to bottom, rgba(255, 255, 255, 1) 3%, #8eaad4 100%)');
+        rootElement.style.setProperty('--font-color', 'darkslategray');
       }
 
       switch (theme) {
