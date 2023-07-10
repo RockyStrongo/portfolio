@@ -1,0 +1,48 @@
+.contact-form {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.contact-form-visible {
+    opacity: 1;
+}
+
+.form-group {
+    position: relative;
+    display: flex;
+    align-items: start
+}
+
+.form-label {
+    position: absolute;
+    left: 0.35rem;
+    color: darkslategray;
+    transition: transform 150ms ease-out;
+}
+
+.focused {
+    transform: translateY(-125%);
+    /* font-size: .95em; */
+    left: 0rem;
+    color: var(--font-color)
+}
+
+.send-button {
+    padding: 0.5rem;
+    cursor: pointer;
+    font-family: unset;
+    border: unset;
+    font-size: medium;
+    color: var(--font-color);
+    background-color: var(--hero-bg-color);
+    border-radius: 0.3rem;
+    transition: all 150ms ease-out;
+}
+
+.send-button:hover {
+    filter: drop-shadow(0.06rem 0.06rem 0.15rem white);
+}

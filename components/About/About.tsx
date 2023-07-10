@@ -24,7 +24,7 @@ export function About({ firstClick }: AboutProps) {
     return (
         <div className={`about ${textIsVisible && `about-visible`}`}>
             <div className='about-content'>
-                <p>I craft web applications. I currently work at <a target='_blank' href='https://citech.fr/' className='link link-active'>Citech</a>. </p>
+                <p>I build web applications. I currently work at <a target='_blank' href='https://citech.fr/' className='link link-active'>Citech</a>. </p>
                 <p>My main expertise is front-end development, particularly with React, Next.js, and Tailwind CSS.</p>
                 <p>I live in <a target='_blank' className='link link-active' href="https://www.google.com/search?q=Aix-en-Provence">Aix-en-Provence</a>, in the south of France.</p>
                 <p>In my free time, I enjoy oil painting. You can find some of my artwork <Link className='link link-active' href="/painting">here</Link> !</p>

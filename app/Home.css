@@ -1,3 +1,5 @@
+
+
 .loading {
     height: 100%;
     width: 100%;
@@ -42,6 +44,7 @@
 .content {
     height: 0%;
     background: var(--content-bg-color);
+    color: var(--content-font-color);
     transition: 2s height;
     display: flex;
     align-items: center;
@@ -67,6 +70,7 @@
     font-size: xx-small;
     opacity: 0;
     transition: opacity 1.5s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .theme-switcherVisible {

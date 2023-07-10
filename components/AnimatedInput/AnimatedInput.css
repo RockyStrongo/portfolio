@@ -1,0 +1,38 @@
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center
+}
+
+.input-label {
+    position: absolute;
+    left: 0.5rem;
+    font-size: medium;
+    transition: all 150ms ease-out;
+}
+
+.input-label-textarea {
+    top: .5rem;
+}
+
+.focused {
+    transform: translateY(-160%);
+    left: 0rem;
+}
+
+.contact-input {
+    all: unset;
+    padding: .5rem;
+    width: 100%;
+    background-color: var(--input-bg-color);
+    font-size: medium;
+    border-radius: 0.3rem;
+}
+
+.contact-input:focus-visible{
+    filter: drop-shadow(0.06rem 0.06rem 0.15rem white);
+}
+
+textarea.contact-input {
+    height: 6rem;
+}

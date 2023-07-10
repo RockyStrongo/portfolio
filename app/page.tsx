@@ -4,6 +4,7 @@ import { TitleBlock } from "@/components/TitleBlock/TitleBlock"
 import { About } from "@/components/About/About"
 import { useEffect, useState, useRef } from "react"
 import "./Home.css"
+import Contact from "@/components/Contact/Contact"
 
 export default function Home() {
 
@@ -39,12 +40,16 @@ export default function Home() {
         rootElement.style.setProperty('--hero-bg-color', '#18202c');
         rootElement.style.setProperty('--content-bg-color', 'linear-gradient(147deg, #000000 0%, #2c3e50 74%)');
         rootElement.style.setProperty('--font-color', 'rgb(248, 250, 252)');
+        rootElement.style.setProperty('--content-font-color', 'rgb(248, 250, 252)');
+        rootElement.style.setProperty('--input-bg-color', '#3c4f63');
       }
 
       function setToLight() {
         rootElement.style.setProperty('--hero-bg-color', 'rgb(248, 250, 252)');
-        rootElement.style.setProperty('--content-bg-color', 'linear-gradient(to bottom, rgba(255, 255, 255, 1) 3%, #8eaad4 100%)');
+        rootElement.style.setProperty('--content-bg-color', 'linear-gradient(to bottom, #7aa2df 0%, #9fb5d6 90%)');
         rootElement.style.setProperty('--font-color', 'darkslategray');
+        rootElement.style.setProperty('--content-font-color', 'black');
+        rootElement.style.setProperty('--input-bg-color', 'rgb(247, 240, 240)');
       }
 
       switch (theme) {
@@ -98,7 +103,7 @@ export default function Home() {
           ) : activeLink === "Projects" ? (
             <p>Projects content</p>
           ) : activeLink === "Contact" ? (
-            <p>Contact content</p>
+            <Contact/>
           ) : null}
         </div>
 
