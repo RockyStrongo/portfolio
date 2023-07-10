@@ -15,20 +15,14 @@
 }
 
 .about-icons {
-    width: 0%;
     height: 2.5rem;
     padding-top: 1em;
     margin: 0 auto;
     display: flex;
     width: 70%;
     justify-content: space-evenly;
-    transition: all 1s;
     white-space: nowrap;
     overflow: hidden;
-}
-
-.about-iconsVisible {
-    width: 100%;
 }
 
 .about-icon {

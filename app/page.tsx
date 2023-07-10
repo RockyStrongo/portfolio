@@ -89,7 +89,11 @@ export default function Home() {
       {!loading ? <div className="screen">
         <div className={`hero ${screenSplitted && `hero-splitted`}`}>
           <Animation isBlurred={animationIsBlurred} />
-          <TitleBlock isVisible={titleIsVisible} isSmall={screenSplitted} onLinkClick={handleLinkClick} links={links} activeLink={activeLink ?? ""} />
+          <TitleBlock isVisible={titleIsVisible}
+            isSmall={screenSplitted}
+            onLinkClick={handleLinkClick}
+            links={links}
+            activeLink={activeLink ?? ""} />
           <div className={`theme-switcher ${titleIsVisible && 'theme-switcherVisible'}`}>
             <div className={`theme-item ${theme === 'dark' && 'theme-itemSelected'}`} onClick={() => { setTheme('dark') }}>dark</div>
             <div className={`theme-item ${theme === 'auto' && 'theme-itemSelected'}`} onClick={() => { setTheme('auto') }}>auto</div>
@@ -103,7 +107,7 @@ export default function Home() {
           ) : activeLink === "Projects" ? (
             <p>Projects content</p>
           ) : activeLink === "Contact" ? (
-            <Contact firstClick={linkClickCount == 1 ? true : false}/>
+            <Contact firstClick={linkClickCount == 1 ? true : false} />
           ) : null}
         </div>
 
