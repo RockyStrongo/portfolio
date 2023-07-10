@@ -1,6 +1,6 @@
 import './TitleBlock.css'
 
-type AnimatdTitleProps = {
+interface AnimatdTitleProps {
     isVisible: boolean
     isSmall: boolean
     onLinkClick: (clickedLink: String) => void

@@ -103,7 +103,7 @@ export default function Home() {
           ) : activeLink === "Projects" ? (
             <p>Projects content</p>
           ) : activeLink === "Contact" ? (
-            <Contact/>
+            <Contact firstClick={linkClickCount == 1 ? true : false}/>
           ) : null}
         </div>
 

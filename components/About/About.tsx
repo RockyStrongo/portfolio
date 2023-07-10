@@ -3,7 +3,7 @@ import Link from 'next/link'
 import './About.css'
 import Image from 'next/image'
 
-type AboutProps = {
+interface AboutProps {
     firstClick: boolean
 }
 
@@ -16,7 +16,7 @@ export function About({ firstClick }: AboutProps) {
         () => {
             firstClick ? setTimeout(() => {
                 setTextIsVisible(true)
-            }, 1500) : setTextIsVisible(true);
+            }, 750) : setTextIsVisible(true);
             setIconsAreVisible(true);
         }, [firstClick]
     )

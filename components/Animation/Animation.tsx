@@ -2,7 +2,7 @@
 import "./Animation.css"
 import { useEffect, useState } from "react";
 
-type AnimationProps = {
+interface AnimationProps {
     isBlurred: boolean
 }
 

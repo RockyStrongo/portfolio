@@ -4,11 +4,19 @@ import AnimatedInput from '../AnimatedInput/AnimatedInput'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
-export default function Contact() {
+interface ContactProps {
+    firstClick: boolean
+}
 
-    useEffect(() => {
-        setFormIsVisible(true);
-    }, [])
+export default function Contact({ firstClick }: ContactProps) {
+
+    useEffect(
+        () => {
+            firstClick ? setTimeout(() => {
+                setFormIsVisible(true)
+            }, 750) : setFormIsVisible(true)
+        }, [firstClick]
+    )
 
     const [formIsVisible, setFormIsVisible] = useState<boolean>(false)
 
