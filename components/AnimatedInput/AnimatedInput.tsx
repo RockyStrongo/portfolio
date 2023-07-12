@@ -44,13 +44,13 @@ export default function AnimatedInput({ id, placeholderLabel, type }: AnimatedIn
                 {placeholderLabel}
             </label>
             {type === "text" || type === "email" ? <input
-                className='contact-input'
+                className='input'
                 type={type}
                 id={id}
                 onFocus={onInputFocus}
                 onBlur={OnInputBlur}
                 onChange={OnInputChange} /> : <textarea
-                className='contact-input'
+                className='input'
                 id={id}
                 onFocus={onInputFocus}
                 onBlur={OnInputBlur} />}

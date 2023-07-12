@@ -6,33 +6,58 @@
 
 .input-label {
     position: absolute;
-    left: 0.5rem;
-    font-size: medium;
+    font-size: small;
     transition: all 150ms ease-out;
+    left: .5rem;    
 }
 
 .input-label-textarea {
-    top: .5rem;
+    top: 0rem;
 }
 
 .focused {
-    transform: translateY(-160%);
+    transform: translateY(-120%);
     left: 0rem;
 }
 
-.contact-input {
+.input {
     all: unset;
-    padding: .5rem;
     width: 100%;
     background-color: var(--input-bg-color);
-    font-size: medium;
+    font-size: small;
     border-radius: 0.3rem;
+    padding-left: 0.5rem;   
 }
 
-.contact-input:focus-visible{
+.input:focus-visible{
     filter: drop-shadow(0.06rem 0.06rem 0.15rem white);
 }
 
-textarea.contact-input {
+textarea.input {
     height: 6rem;
+}
+
+@media screen and (min-width: 800px) {
+
+    /* CSS styles for screens with a width of 800px or larger */
+
+    .input {
+        padding: .5rem;
+        font-size: medium;
+    }
+
+    .input-label {
+        left: 0.5rem;
+        font-size: medium;
+    }
+
+    .input-label-textarea {
+        top: .5rem;
+    }
+
+    .focused {
+        transform: translateY(-160%);
+    }
+
+
 }
