@@ -10,8 +10,6 @@ interface AboutProps {
 
 export function About({ firstClick }: AboutProps) {
 
-    const router = useRouter()
-
     const [textIsVisible, setTextIsVisible] = useState(false)
 
     useEffect(
@@ -53,7 +51,7 @@ export function About({ firstClick }: AboutProps) {
                         alt="download-cv-icon"
                         width="30"
                         height="30"
-                        onClick={() => { router.push("/cv/cv.pdf") }}
+                        onClick={goTo("/cv/cv.pdf") }
                     />
                 </div>
 
