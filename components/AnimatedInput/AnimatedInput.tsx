@@ -4,9 +4,11 @@ interface AnimatedInputProps {
     id: string,
     placeholderLabel: string,
     type: "text" | "email" | "textarea",
+    value: string,
+    onChange: (e: React.ChangeEvent<HTMLTextAreaElement|HTMLInputElement>) => void
 }
 
-export default function AnimatedInput({ id, placeholderLabel, type }: AnimatedInputProps) {
+export default function AnimatedInput({ id, placeholderLabel, type, value, onChange }: AnimatedInputProps) {
 
     const placeholderGoesUp = (elementId: string) => {
         const label = document.getElementById(elementId)
@@ -28,9 +30,10 @@ export default function AnimatedInput({ id, placeholderLabel, type }: AnimatedIn
         !inputValue && placeholderGoesDown(e.target.id + "Label")
     }
 
-    const OnInputChange = (e: React.ChangeEvent) => {
+    const OnInputChange = (e: React.ChangeEvent<HTMLTextAreaElement|HTMLInputElement>) => {
         const inputValue = (e.target as HTMLInputElement).value
         inputValue && placeholderGoesUp(e.target.id + "Label")
+        onChange(e)
     }
 
 
@@ -49,11 +52,14 @@ export default function AnimatedInput({ id, placeholderLabel, type }: AnimatedIn
                 id={id}
                 onFocus={onInputFocus}
                 onBlur={OnInputBlur}
-                onChange={OnInputChange} /> : <textarea
+                onChange={OnInputChange}
+                value={value} /> : <textarea
                 className='input'
                 id={id}
                 onFocus={onInputFocus}
-                onBlur={OnInputBlur} />}
+                onBlur={OnInputBlur}
+                value={value}
+                onChange={OnInputChange} />}
         </div>
 
     )

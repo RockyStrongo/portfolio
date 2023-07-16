@@ -7,6 +7,12 @@
     transition: opacity 1s;
 }
 
+.contact-form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
 .contact-form-visible {
     opacity: 1;
 }
@@ -45,11 +51,6 @@
     transition: all 150ms ease-out;
 }
 
-.send-icon{
-    width: 1.25rem;
-    height: 1.25rem; 
-}
-
 .send-button:hover {
     filter: drop-shadow(0.06rem 0.06rem 0.15rem white);
 }
@@ -62,9 +63,8 @@
         gap: 2.25rem;
     }
 
-    .send-icon{
-        width: 2rem;
-        height: 2rem; 
+    .contact-form-inputs {
+        gap: 2.25rem;
     }
 
 }
