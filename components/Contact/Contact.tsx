@@ -1,11 +1,10 @@
 import React from 'react'
 import './Contact.css'
 import AnimatedInput from '../AnimatedInput/AnimatedInput'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import Spinner from '../Spinner/Spinner'
 import SendEmailIcon from '../SendEmailIcon/SendEmailIcon'
-import axios, { AxiosResponse } from 'axios'
+import axios from 'axios'
+import DOMPurify from 'dompurify';
 
 interface ContactProps {
     firstClick: boolean
@@ -45,9 +44,10 @@ export default function Contact({ firstClick }: ContactProps) {
 
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
         const { id, value } = e.target;
+        const sanitizedValue = DOMPurify.sanitize(value);
         setEmailFormData({
             ...emailFormData,
-            [id]: value
+            [id]: sanitizedValue
         })
     }
 
