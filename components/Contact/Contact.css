@@ -55,6 +55,32 @@
     filter: drop-shadow(0.06rem 0.06rem 0.15rem white);
 }
 
+.message-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.message-snack {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.message-snack-success {
+    background-color: green;
+}
+
+.new-email-link {
+    cursor: pointer;
+}
+
 @media screen and (min-width: 800px) {
 
     /* CSS styles for screens with a width of 800px or larger */

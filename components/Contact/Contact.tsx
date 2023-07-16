@@ -30,20 +30,16 @@ export default function Contact({ firstClick }: ContactProps) {
     })
     const [message, setMessage] = useState<string>("")
 
-    const sendEmail = async (e: React.FormEvent) => {
-        e.preventDefault()
-        console.log(emailFormData)
-
-
+    const sendEmail = async () => {
         try {
             setEmailState("loading")
             const res = await axios.post('/api/contact', emailFormData)
             setEmailState("sent")
-            setMessage("Email envoyé avec succès")
+            setMessage("✓ Email sent !")
 
         } catch (error: any) {
             setEmailState("error")
-            setMessage(error)
+            setMessage("API Error, please try again later")
         }
     }
 
@@ -55,17 +51,48 @@ export default function Contact({ firstClick }: ContactProps) {
         })
     }
 
-    return <form className={`contact-form ${formIsVisible && `contact-form-visible`}`} onSubmit={sendEmail}>
-        {emailState != "sent" ? <div className='contact-form-inputs'>
+    const resetForm = () => {
+        setEmailFormData({
+            name: "",
+            email: "",
+            message: ""
+        })
+        setFormIsVisible(true)
+        setEmailState("initial")
+        setMessage("")
+    }
+
+    const validateForm = () => {
+        if (emailFormData.name === "" || emailFormData.email === "" || emailFormData.message === "") {
+            setMessage("All fields must be filled")
+            return false
+        }
+        return true
+    }
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+
+        const formIsValid = validateForm()
+
+        if (formIsValid) {
+            sendEmail()
+        }
+
+    }
+
+    return (<form className={`contact-form ${formIsVisible && `contact-form-visible`}`} onSubmit={handleSubmit}>
+        {emailState != "sent" && emailState != "error" && <div className='contact-form-inputs'>
             <AnimatedInput type="text" placeholderLabel='Name' id="name" value={emailFormData.name} onChange={handleChange} />
             <AnimatedInput type="email" placeholderLabel='Email' id="email" value={emailFormData.email} onChange={handleChange} />
             <AnimatedInput type="textarea" placeholderLabel='Message' id="message" value={emailFormData.message} onChange={handleChange} />
-        </div> : <div>
-            {message}
-            <div>send a new email</div>
+            <button className='send-button' type='submit'>
+                <SendEmailIcon state={emailState} />
+            </button>
         </div>}
-        {emailState != "sent" && <button className='send-button' type='submit'>
-            <SendEmailIcon state={emailState} />
-        </button>}
-    </form>
+        {message && <div className='message-wrapper'>
+            <div className={`message-snack ${emailState === 'sent' && 'message-snack-success'}`}>{message}</div>
+            {emailState === "sent" && <div className='new-email-link' onClick={resetForm}>↻ Send another new email</div>}
+        </div>}
+    </form>)
 }
