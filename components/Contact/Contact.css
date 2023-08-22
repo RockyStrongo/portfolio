@@ -1,20 +1,17 @@
-.contact-form {
+.contact-form-container {
     width: 65%;
+}
+
+.contact-form {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    opacity: 0;
-    transition: opacity 0.5s;
 }
 
 .contact-form-inputs {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-}
-
-.contact-form-visible {
-    opacity: 1;
 }
 
 .form-group {

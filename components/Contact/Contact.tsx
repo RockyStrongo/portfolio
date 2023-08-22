@@ -5,12 +5,13 @@ import { useState, useEffect } from 'react'
 import SendEmailIcon from '../SendEmailIcon/SendEmailIcon'
 import axios from 'axios'
 import DOMPurify from 'dompurify';
+import { ContentAppearsAnimation } from '../ContentAppearsAnimation/ContentAppearsAnimation'
 
 interface ContactProps {
     firstClick: boolean
 }
 
-export default function Contact({ firstClick }: ContactProps) {
+export function Contact({ firstClick }: ContactProps) {
 
     useEffect(
         () => {
@@ -81,18 +82,26 @@ export default function Contact({ firstClick }: ContactProps) {
 
     }
 
-    return (<form className={`contact-form ${formIsVisible && `contact-form-visible`}`} onSubmit={handleSubmit}>
-        {emailState != "sent" && emailState != "error" && <div className='contact-form-inputs'>
-            <AnimatedInput type="text" placeholderLabel='Name' id="name" value={emailFormData.name} onChange={handleChange} />
-            <AnimatedInput type="email" placeholderLabel='Email' id="email" value={emailFormData.email} onChange={handleChange} />
-            <AnimatedInput type="textarea" placeholderLabel='Message' id="message" value={emailFormData.message} onChange={handleChange} />
-            <button className='send-button' type='submit'>
-                <SendEmailIcon state={emailState} />
-            </button>
-        </div>}
-        {message && <div className='message-wrapper'>
-            <div className={`message-snack ${emailState === 'sent' && 'message-snack-success'}`}>{message}</div>
-            {emailState === "sent" && <div className='new-email-link' onClick={resetForm}>↻ Send another new email</div>}
-        </div>}
-    </form>)
+    return (
+
+        <form className="contact-form-container" onSubmit={handleSubmit}>
+            <ContentAppearsAnimation firstClick={firstClick}>
+                <div className='contact-form'>
+                {emailState != "sent" && emailState != "error" && <div className='contact-form-inputs'>
+                    <AnimatedInput type="text" placeholderLabel='Name' id="name" value={emailFormData.name} onChange={handleChange} />
+                    <AnimatedInput type="email" placeholderLabel='Email' id="email" value={emailFormData.email} onChange={handleChange} />
+                    <AnimatedInput type="textarea" placeholderLabel='Message' id="message" value={emailFormData.message} onChange={handleChange} />
+                    <button className='send-button' type='submit'>
+                        <SendEmailIcon state={emailState} />
+                    </button>
+                </div>}
+                {message && <div className='message-wrapper'>
+                    <div className={`message-snack ${emailState === 'sent' && 'message-snack-success'}`}>{message}</div>
+                    {emailState === "sent" && <div className='new-email-link' onClick={resetForm}>↻ Send another new email</div>}
+                </div>}
+                </div>
+            </ContentAppearsAnimation>
+        </form>
+
+    )
 }

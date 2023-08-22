@@ -1,10 +1,11 @@
 'use client'
+import { useEffect, useState, useRef } from "react"
 import { Animation } from "@/components/Animation/Animation"
 import { TitleBlock } from "@/components/TitleBlock/TitleBlock"
 import { About } from "@/components/About/About"
-import { useEffect, useState, useRef } from "react"
+import { Projects } from "@/components/Projects/Projects"
+import { Contact } from "@/components/Contact/Contact"
 import "./Home.css"
-import Contact from "@/components/Contact/Contact"
 
 export default function Home() {
 
@@ -73,7 +74,7 @@ export default function Home() {
   )
 
   const handleLinkClick = (link: String) => {
-    setLinkClickCount(linkClickCount + 1)
+    setLinkClickCount((prevState) => prevState + 1)
     setScreenSplitted(true)
     setActiveLink(link)
   }
@@ -105,7 +106,7 @@ export default function Home() {
           {activeLink === "About" ? (
             <About firstClick={linkClickCount == 1 ? true : false} />
           ) : activeLink === "Projects" ? (
-            <p>Projects content</p>
+            <Projects firstClick={linkClickCount == 1 ? true : false} />
           ) : activeLink === "Contact" ? (
             <Contact firstClick={linkClickCount == 1 ? true : false} />
           ) : null}
