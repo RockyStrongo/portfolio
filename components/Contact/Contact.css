@@ -26,7 +26,6 @@
 .form-label {
     position: absolute;
     left: 0.35rem;
-    color: darkslategray;
     transition: transform 150ms ease-out;
 }
 
@@ -67,14 +66,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: red;
+    background: var(--error-bg-color);
     width: 100%;
     padding: 0.5rem;
     border-radius: 0.5rem;
 }
 
 .message-snack-success {
-    background-color: green;
+    background: var(--success-bg-color);
 }
 
 .new-email-link {

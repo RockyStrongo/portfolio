@@ -4,6 +4,8 @@
   --content-font-color: black;
   --input-bg-color: #b1c3df;
   --font-color: darkslategray;
+  --error-bg-color: linear-gradient(90deg, hsla(22, 100%, 78%, 1) 0%, hsla(2, 78%, 62%, 1) 100%);
+  --success-bg-color: linear-gradient(90deg, hsla(145, 84%, 73%, 1) 0%, hsla(150, 61%, 48%, 1) 100%);
 }
 
 

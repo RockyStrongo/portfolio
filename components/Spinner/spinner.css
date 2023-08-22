@@ -1,39 +1,36 @@
 /* CSS for the parent container */
 div[role="status"] {
-    display: inline-flex;
-    align-items: center;
-    color: red;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* CSS for the SVG element */
+div[role="status"] svg {
+  width: 100%;
+  height: 100%;
+  animation: spin 1s linear infinite;
+}
+
+/* CSS for the "Loading..." text */
+div[role="status"] span.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* CSS keyframes animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  /* CSS for the SVG element */
-  div[role="status"] svg {
-    width: 100%;
-    height: 100%;
-    /* margin-right: 2px; */
-    fill: #0000ff; /* Blue fill color */
-    animation: spin 1s linear infinite;
+
+  100% {
+    transform: rotate(360deg);
   }
-  
-  /* CSS for the "Loading..." text */
-  div[role="status"] span.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-  }
-  
-  /* CSS keyframes animation */
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
+}
