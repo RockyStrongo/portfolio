@@ -1,7 +1,7 @@
 .about {
     margin: 5em;
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 0.5s;
     display: flex;
     align-items: center;
 }

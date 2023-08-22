@@ -16,7 +16,7 @@ export default function Contact({ firstClick }: ContactProps) {
         () => {
             firstClick ? setTimeout(() => {
                 setFormIsVisible(true)
-            }, 750) : setFormIsVisible(true)
+            }, 250) : setFormIsVisible(true)
         }, [firstClick]
     )
 

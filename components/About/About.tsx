@@ -16,7 +16,7 @@ export function About({ firstClick }: AboutProps) {
         () => {
             firstClick ? setTimeout(() => {
                 setTextIsVisible(true)
-            }, 750) : setTextIsVisible(true);
+            }, 250) : setTextIsVisible(true);
         }, [firstClick]
     )
 
