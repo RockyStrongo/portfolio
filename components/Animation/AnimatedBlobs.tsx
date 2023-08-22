@@ -1,12 +1,12 @@
 'use client'
-import "./Animation.css"
+import "./AnimatedBlobs.css"
 import { useEffect, useState } from "react";
 
 interface AnimationProps {
     isBlurred: boolean
 }
 
-export function Animation({isBlurred}: AnimationProps) {
+export function AnimatedBlobs({isBlurred}: AnimationProps) {
 
     return (
         <div className={`animation-container ${isBlurred && `blurred` }`}>

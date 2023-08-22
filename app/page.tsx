@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState, useRef } from "react"
-import { Animation } from "@/components/Animation/Animation"
+import { AnimatedBlobs } from "@/components/Animation/AnimatedBlobs"
 import { TitleBlock } from "@/components/TitleBlock/TitleBlock"
 import { About } from "@/components/About/About"
 import { Projects } from "@/components/Projects/Projects"
@@ -89,7 +89,7 @@ export default function Home() {
     <main>
       {!loading ? <div className="screen">
         <div className={`hero ${screenSplitted && `hero-splitted`}`}>
-          <Animation isBlurred={animationIsBlurred} />
+          <AnimatedBlobs isBlurred={animationIsBlurred} />
           <TitleBlock isVisible={titleIsVisible}
             isSmall={screenSplitted}
             onLinkClick={handleLinkClick}
