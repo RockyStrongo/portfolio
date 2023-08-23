@@ -1,6 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // output: 'export',
+    async headers() {
+        return [
+            {
+                source: '/(.*)?', // Matches all pages
+                headers: [
+                    {
+                        key: 'X-Frame-Options',
+                        value: 'DENY',
+                    }
+                ]
+            }
+        ]
+    }
 }
 
 module.exports = nextConfig
