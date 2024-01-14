@@ -36,7 +36,15 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   //check that origin is authorized
   const origin: string | string[] | undefined = req.headers.origin
 
-  if (origin != process.env.URL) {
+  let protocol = 'https'
+
+  if (process.env.NODE_ENV === 'development') {
+    protocol = 'http'
+  }
+
+  const domain = process.env.DOMAIN
+
+  if (origin != `${protocol}://${domain}`) {
     return res.status(403).json({ errorMessage: 'not Authorized' })
   }
 
