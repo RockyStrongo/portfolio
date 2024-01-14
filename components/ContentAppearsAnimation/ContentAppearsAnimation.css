@@ -1,6 +1,8 @@
 .initial {
     opacity: 0;
     transition: opacity 0.25s;
+    height: 100%;
+    width: 100%;
 }
 
 .visible {

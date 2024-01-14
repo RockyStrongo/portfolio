@@ -1,124 +1,96 @@
-
-
 .loading {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--hero-bg-color);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--hero-bg-color);
 }
 
 .screen {
-    height: var(--doc-height);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  height: var(--doc-height);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
-
 
 .hero {
-    position: relative;
-    height: var(--doc-height);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: var(--hero-bg-color);
-    transition: 0.5s height;
+  position: relative;
+  height: var(--doc-height);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--hero-bg-color);
+  transition: 0.5s height;
 }
 
-
 .hero-splitted {
-    height: 35%;
+  height: 35%;
 }
 
 .content {
-    height: 0%;
-    background: var(--content-bg-color);
-    color: var(--content-font-color);
-    transition: 0.5s height;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: small;
+  height: 0%;
+  background: var(--content-bg-color);
+  color: var(--content-font-color);
+  transition: 0.5s height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: small;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
 }
 
 .content-opened {
-    height: 65%;
-}
-
-.theme-switcher {
-    z-index: 3;
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0 0.5rem 0 0.5rem;
-    bottom: 1.5rem;
-    border: solid 0.1rem;
-    border-radius: 1rem;
-    font-size: xx-small;
-    opacity: 0;
-    transition: opacity 1.5s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.theme-switcherVisible {
-    opacity: 1
-}
-
-.theme-item {
-    cursor: pointer;
-    transition: font-size 0.5s;
-}
-
-.theme-itemSelected {
-    font-size: x-small;
-    font-weight: bold;
+  height: 65%;
 }
 
 @media screen and (min-width: 800px) {
+  /* CSS styles for screens with a width of 800px or larger */
+  .screen {
+    flex-direction: row;
+  }
 
-    /* CSS styles for screens with a width of 800px or larger */
-    .screen {
-        flex-direction: row;
-    }
+  .hero-splitted {
+    width: 50%;
+    height: 100%;
+  }
 
-    .hero-splitted {
-        width: 50%;
-        height: 100%;
-    }
+  .content {
+    width: 0%;
+    transition: 0.5s width;
+  }
 
-    .content {
-        width: 0%;
-        transition: 0.5s width;
-    }
+  .content-opened {
+    width: 50%;
+    height: 100%;
+  }
 
-    .content-opened {
-        width: 50%;
-        height: 100%;
-    }
+  .hero {
+    transition: 0.5s width;
+  }
 
-    .hero {
-        transition: 0.5s width;
-    }
+  .theme-switcher {
+    font-size: x-small;
+  }
 
-    .theme-switcher {
-        font-size: x-small;
-    }
-
-    .theme-itemSelected {
-        font-size: small;
-        font-weight: bold;
-    }
+  .theme-itemSelected {
+    font-size: small;
+    font-weight: bold;
+  }
 }

@@ -1,0 +1,43 @@
+.theme-switcher {
+  z-index: 3;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.5rem 0 0.5rem;
+  bottom: 1.5rem;
+  border: solid 0.1rem;
+  border-radius: 1rem;
+  font-size: xx-small;
+  opacity: 0;
+  transition: opacity 1.5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-switcherVisible {
+  opacity: 1;
+}
+
+.theme-item {
+  cursor: pointer;
+  transition: font-size 0.5s;
+}
+
+.theme-itemSelected {
+  font-size: x-small;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 800px) {
+  /* CSS styles for screens with a width of 800px or larger */
+
+  .theme-switcher {
+    font-size: x-small;
+  }
+
+  .theme-itemSelected {
+    font-size: small;
+    font-weight: bold;
+  }
+}

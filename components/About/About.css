@@ -1,5 +1,7 @@
 .about {
-    margin: 5em;
+    margin-right: 5em;
+    margin-left: 5em;
+    height: 100%;
     display: flex;
     align-items: center;
 }
