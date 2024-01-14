@@ -36,17 +36,18 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   //check that origin is authorized
   const origin: string | string[] | undefined = req.headers.origin
 
-  let protocol = 'https'
+  // buggy in deployed version to be fixed
+  // let protocol = 'https'
 
-  if (process.env.NODE_ENV === 'development') {
-    protocol = 'http'
-  }
+  // if (process.env.NODE_ENV === 'development') {
+  //   protocol = 'http'
+  // }
 
-  const domain = process.env.VERCEL_URL
+  // const domain = process.env.VERCEL_URL
 
-  if (origin != `${protocol}://${domain}`) {
-    return res.status(403).json({ errorMessage: 'not Authorized' })
-  }
+  // if (origin != `${protocol}://${domain}`) {
+  //   return res.status(403).json({ errorMessage: 'not Authorized' })
+  // }
 
   //rate limiter
   const ipAddress: string | string[] | undefined =
