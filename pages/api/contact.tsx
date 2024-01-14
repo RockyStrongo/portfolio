@@ -42,7 +42,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     protocol = 'http'
   }
 
-  const domain = process.env.DOMAIN
+  const domain = process.env.VERCEL_URL
 
   if (origin != `${protocol}://${domain}`) {
     return res.status(403).json({ errorMessage: 'not Authorized' })
