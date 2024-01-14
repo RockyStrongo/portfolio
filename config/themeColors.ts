@@ -4,6 +4,8 @@ export const darkThemeColors = {
   '--font-color': 'rgb(248, 250, 252)',
   '--content-font-color': 'rgb(248, 250, 252)',
   '--input-bg-color': '#3c4f63',
+  '--error-bg-color': 'linear-gradient(90deg, hsla(22, 100%, 78%, 1) 0%, hsla(2, 78%, 62%, 1) 100%)',
+  '--success-bg-color': 'linear-gradient(90deg, hsla(145, 84%, 73%, 1) 0%, hsla(150, 61%, 48%, 1) 100%)',
 }
 
 export const lightThemeColors = {
@@ -12,4 +14,6 @@ export const lightThemeColors = {
   '--font-color': 'darkslategray',
   '--content-font-color': 'black',
   '--input-bg-color': 'rgb(247, 240, 240)',
+  '--error-bg-color': 'linear-gradient(90deg, hsla(22, 100%, 78%, 1) 0%, hsla(2, 78%, 62%, 1) 100%)',
+  '--success-bg-color': 'linear-gradient(90deg, hsla(145, 84%, 73%, 1) 0%, hsla(150, 61%, 48%, 1) 100%)',
 }

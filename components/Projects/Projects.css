@@ -14,6 +14,7 @@
   overflow: hidden;
   height: fit-content;
   padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
 .project-card-description {
@@ -40,7 +41,9 @@
 @media screen and (min-width: 800px) {
   /* CSS styles for screens with a width of 800px or larger */
   .projects {
-    padding: 2rem;
+    padding-top: 1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
   .project-card-title {

@@ -1,92 +1,95 @@
 .contact-form-container {
-    width: 65%;
+  width: 65%;
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .contact-form-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .form-group {
-    position: relative;
-    display: flex;
-    align-items: start
+  position: relative;
+  display: flex;
+  align-items: start;
 }
 
 .form-label {
-    position: absolute;
-    left: 0.35rem;
-    transition: transform 150ms ease-out;
+  position: absolute;
+  left: 0.35rem;
+  transition: transform 150ms ease-out;
 }
 
 .focused {
-    transform: translateY(-125%);
-    left: 0rem;
-    color: var(--font-color)
+  transform: translateY(-125%);
+  left: 0rem;
+  color: var(--font-color);
 }
 
 .send-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    cursor: pointer;
-    font-family: unset;
-    border: unset;
-    font-size: medium;
-    color: var(--font-color);
-    background-color: var(--hero-bg-color);
-    border-radius: 0.3rem;
-    transition: all 150ms ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-family: unset;
+  border: unset;
+  font-size: medium;
+  color: var(--font-color);
+  background-color: var(--hero-bg-color);
+  border-radius: 0.3rem;
+  transition: all 150ms ease-out;
 }
 
 .send-button:hover {
-    filter: drop-shadow(0.06rem 0.06rem 0.15rem white);
+  filter: drop-shadow(0.06rem 0.06rem 0.15rem white);
 }
 
 .message-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .message-snack {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--error-bg-color);
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--error-bg-color);
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .message-snack-success {
-    background: var(--success-bg-color);
+  background: var(--success-bg-color);
 }
 
 .new-email-link {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+/* class to hide honeypot  */
+.gxxghqibhy {
+  display: none;
 }
 
 @media screen and (min-width: 800px) {
+  /* CSS styles for screens with a width of 800px or larger */
 
-    /* CSS styles for screens with a width of 800px or larger */
+  .contact-form {
+    gap: 2.25rem;
+  }
 
-    .contact-form {
-        gap: 2.25rem;
-    }
-
-    .contact-form-inputs {
-        gap: 2.25rem;
-    }
-
+  .contact-form-inputs {
+    gap: 2.25rem;
+  }
 }
