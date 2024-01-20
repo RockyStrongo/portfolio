@@ -1,18 +1,18 @@
 /* CSS for the parent container */
-div[role="status"] {
+div[role='status'] {
   display: inline-flex;
   align-items: center;
 }
 
 /* CSS for the SVG element */
-div[role="status"] svg {
+div[role='status'] svg {
   width: 100%;
   height: 100%;
   animation: spin 1s linear infinite;
 }
 
 /* CSS for the "Loading..." text */
-div[role="status"] span.sr-only {
+div[role='status'] span.sr-only {
   position: absolute;
   width: 1px;
   height: 1px;

@@ -1,21 +1,19 @@
-import { Dispatch, SetStateAction } from "react"
+import { Dispatch, SetStateAction } from 'react'
 import './ThemeSwitcher.css'
 
 type ThemeSwitcherProps = {
-  titleIsVisible: boolean
+  isVisible: boolean
   currentTheme: string
-  setTheme: Dispatch<SetStateAction<"dark" | "auto" | "light">>
+  setTheme: Dispatch<SetStateAction<'dark' | 'auto' | 'light'>>
 }
 
 export default function ThemeSwitcher({
-  titleIsVisible,
+  isVisible,
   currentTheme,
   setTheme,
 }: ThemeSwitcherProps) {
   return (
-    <div
-      className={`theme-switcher ${titleIsVisible && 'theme-switcherVisible'}`}
-    >
+    <div className={`theme-switcher ${isVisible && 'theme-switcherVisible'}`}>
       <div
         className={`theme-item ${
           currentTheme === 'dark' && 'theme-itemSelected'

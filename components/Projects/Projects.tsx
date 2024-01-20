@@ -1,13 +1,12 @@
+import { useClickCount } from '@/context/useClickCount'
 import { ContentAppearsAnimation } from '../ContentAppearsAnimation/ContentAppearsAnimation'
 import './Projects.css'
 
-interface ProjectsProps {
-  firstClick: boolean
-}
+export function Projects() {
+  const { clickCount } = useClickCount()
 
-export function Projects({ firstClick }: ProjectsProps) {
   return (
-    <ContentAppearsAnimation firstClick={firstClick}>
+    <ContentAppearsAnimation firstClick={clickCount === 1}>
       <div className='projects'>
         <h2 className='projects-title'>Articles</h2>
         <div className='project-list'>

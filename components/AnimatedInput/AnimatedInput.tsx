@@ -16,7 +16,6 @@ export default function AnimatedInput({ id, placeholderLabel, type, value, onCha
     }
 
     const placeholderGoesDown = (elementId: string) => {
-
         const label = document.getElementById(elementId)
         label?.classList.remove("focused")
     }

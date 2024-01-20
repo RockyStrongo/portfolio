@@ -1,21 +1,25 @@
 'use client'
-import { useEffect, useState, useRef } from 'react'
-import { AnimatedBlobs } from '@/components/Animation/AnimatedBlobs'
-import { TitleBlock } from '@/components/TitleBlock/TitleBlock'
 import { About } from '@/components/About/About'
-import { Projects } from '@/components/Projects/Projects'
+import { AnimatedBlobs } from '@/components/AnimatedBlobs/AnimatedBlobs'
 import { Contact } from '@/components/Contact/Contact'
-import './Home.css'
-import { darkThemeColors, lightThemeColors } from '@/config/themeColors'
+import { Projects } from '@/components/Projects/Projects'
 import ThemeSwitcher from '@/components/ThemeSwitcher/ThemeSwitcher'
+import { TitleBlock } from '@/components/TitleBlock/TitleBlock'
+import { darkThemeColors, lightThemeColors } from '@/config/themeColors'
+import { useClickCount } from '@/context/useClickCount'
+import { useEffect, useState } from 'react'
+import './Home.css'
+
+const TITLE_ANIMATION_DURATION = 1000
 
 export default function Home() {
+  const { clickCount, setClickCount } = useClickCount()
+
   const [loading, setLoading] = useState<boolean>(true)
-  const [linkClickCount, setLinkClickCount] = useState<number>(0)
   const [titleIsVisible, setTitleIsVisible] = useState<boolean>(false)
   const [screenSplitted, setScreenSplitted] = useState<boolean>(false)
   const [animationIsBlurred, setAnimationBlurred] = useState<boolean>(false)
-  const [activeLink, setActiveLink] = useState<String>()
+  const [activeLink, setActiveLink] = useState<String | null>(null)
   const [theme, setTheme] = useState<'auto' | 'dark' | 'light'>('auto')
 
   const applyThemeColors = (
@@ -37,27 +41,33 @@ export default function Home() {
 
   useEffect(() => {
     const root = document.documentElement
-    //dynamically setting the page height to avoid bugs with 100vh in mobile
+    //dynamically setting the page height at page mount to avoid bugs with 100vh in mobile
     root.style.setProperty('--doc-height', `${window.innerHeight}px`)
     setLoading(false)
 
+    //title blob animation
     const timeOut = setTimeout(() => {
       setTitleIsVisible(true)
       setAnimationBlurred(true)
-    }, 1000)
+    }, TITLE_ANIMATION_DURATION)
   }, [])
 
+  //manage theme changes
   useEffect(() => {
+    handleThemeChanges(theme)
+  }, [theme])
+
+  const handleThemeChanges = (theme: 'auto' | 'dark' | 'light') => {
     const rootElement = document.documentElement
-    //manage theme changes
 
     switch (theme) {
       case 'auto':
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          applyThemeColors(rootElement, 'dark')
-        } else {
-          applyThemeColors(rootElement, 'light')
-        }
+        const isDarkMode = window.matchMedia(
+          '(prefers-color-scheme: dark)'
+        ).matches
+        isDarkMode
+          ? applyThemeColors(rootElement, 'dark')
+          : applyThemeColors(rootElement, 'light')
         break
       case 'dark':
         applyThemeColors(rootElement, 'dark')
@@ -67,10 +77,11 @@ export default function Home() {
       default:
         break
     }
-  }, [theme])
+  }
 
   const handleLinkClick = (link: String) => {
-    setLinkClickCount((prevState) => prevState + 1)
+    // tracking click count in global context as it is needed for animation of other components
+    setClickCount(clickCount + 1)
     setScreenSplitted(true)
     setActiveLink(link)
   }
@@ -88,23 +99,19 @@ export default function Home() {
               isSmall={screenSplitted}
               onLinkClick={handleLinkClick}
               links={links}
-              activeLink={activeLink ?? ''}
+              activeLink={activeLink}
             />
             <ThemeSwitcher
-              titleIsVisible={titleIsVisible}
+              isVisible={titleIsVisible}
               currentTheme={theme}
               setTheme={setTheme}
             />
           </div>
 
           <div className={`content ${screenSplitted && `content-opened`}`}>
-            {activeLink === 'About' ? (
-              <About firstClick={linkClickCount == 1 ? true : false} />
-            ) : activeLink === 'Projects' ? (
-              <Projects firstClick={linkClickCount == 1 ? true : false} />
-            ) : activeLink === 'Contact' ? (
-              <Contact firstClick={linkClickCount == 1 ? true : false} />
-            ) : null}
+            {activeLink === 'About' && <About />}
+            {activeLink === 'Projects' && <Projects />}
+            {activeLink === 'Contact' && <Contact />}
           </div>
         </div>
       ) : (

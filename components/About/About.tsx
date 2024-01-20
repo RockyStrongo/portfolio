@@ -3,20 +3,19 @@ import Link from 'next/link'
 import './About.css'
 import Image from 'next/image'
 import { ContentAppearsAnimation } from '../ContentAppearsAnimation/ContentAppearsAnimation'
+import { useClickCount } from '@/context/useClickCount'
 
-interface AboutProps {
-  firstClick: boolean
-}
-
-export function About({ firstClick }: AboutProps) {
+export function About() {
   const goTo = (url: string) => {
     return () => {
       window.open(url, '_blank')
     }
   }
 
+  const { clickCount } = useClickCount()
+
   return (
-    <ContentAppearsAnimation firstClick={firstClick}>
+    <ContentAppearsAnimation firstClick={clickCount === 1}>
       <div className='about'>
         <div className='about-content'>
           <p>

@@ -6,21 +6,11 @@ import SendEmailIcon from '../SendEmailIcon/SendEmailIcon'
 import axios from 'axios'
 import DOMPurify from 'dompurify'
 import { ContentAppearsAnimation } from '../ContentAppearsAnimation/ContentAppearsAnimation'
+import { useClickCount } from '@/context/useClickCount'
 
-interface ContactProps {
-  firstClick: boolean
-}
+export function Contact() {
+  const { clickCount } = useClickCount()
 
-export function Contact({ firstClick }: ContactProps) {
-  useEffect(() => {
-    firstClick
-      ? setTimeout(() => {
-          setFormIsVisible(true)
-        }, 250)
-      : setFormIsVisible(true)
-  }, [firstClick])
-
-  const [formIsVisible, setFormIsVisible] = useState<boolean>(false)
   const [emailState, setEmailState] = useState<
     'initial' | 'loading' | 'sent' | 'error'
   >('initial')
@@ -62,7 +52,6 @@ export function Contact({ firstClick }: ContactProps) {
       email: '',
       message: '',
     })
-    setFormIsVisible(true)
     setEmailState('initial')
     setMessage('')
   }
@@ -91,7 +80,7 @@ export function Contact({ firstClick }: ContactProps) {
 
   return (
     <form className='contact-form-container' onSubmit={handleSubmit}>
-      <ContentAppearsAnimation firstClick={firstClick}>
+      <ContentAppearsAnimation firstClick={clickCount === 1}>
         <div className='contact-form'>
           {emailState != 'sent' && emailState != 'error' && (
             <div className='contact-form-inputs'>
