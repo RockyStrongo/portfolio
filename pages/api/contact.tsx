@@ -49,7 +49,9 @@ export default async function handler(
   const domain = process.env.VERCEL_URL
 
   if (origin != `${protocol}://${domain}`) {
-    return res.status(403).json({ errorMessage: 'not Authorized' })
+    return res
+      .status(403)
+      .json({ origin: origin, domain: `${protocol}://${domain}` })
   }
 
   //rate limiter
