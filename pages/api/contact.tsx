@@ -36,10 +36,10 @@ export default async function handler(
     return res.status(403).json({ errorMessage: 'not Authorized' })
   }
 
-  //check that origin is authorized
+  // only allow same origin requests
   const origin: string | string[] | undefined = req.headers.origin
 
-  // buggy in deployed version to be fixed
+
   let protocol = 'https'
 
   if (process.env.NODE_ENV === 'development') {

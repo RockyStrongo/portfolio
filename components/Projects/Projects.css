@@ -1,5 +1,4 @@
 .projects {
-  height: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 1rem;
@@ -11,10 +10,10 @@
 .project-card {
   background: var(--hero-bg-color);
   border-radius: 1.5rem;
-  overflow: hidden;
   height: fit-content;
   padding: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
 .project-card-description {
