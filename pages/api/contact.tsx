@@ -39,18 +39,10 @@ export default async function handler(
   // only allow same origin requests
   const origin: string | string[] | undefined = req.headers.origin
 
-  let protocol = 'https'
+  const domain = process.env.DOMAIN
 
-  if (process.env.NODE_ENV === 'development') {
-    protocol = 'http'
-  }
-
-  const domain = process.env.VERCEL_URL
-
-  if (origin != `${protocol}://${domain}`) {
-    return res
-      .status(403)
-      .json({ origin: origin, domain: `${protocol}://${domain}` })
+  if (origin != domain) {
+    return res.status(403).json(`Not authorized`)
   }
 
   //rate limiter
@@ -90,7 +82,5 @@ export default async function handler(
 
   if (!accepted) return res.status(500).json('Internal Server Error')
 
-  return res
-    .status(200)
-    .json({ origin: origin, domain: `${protocol}://${domain}` })
+  return res.status(200).json('Email sent')
 }
