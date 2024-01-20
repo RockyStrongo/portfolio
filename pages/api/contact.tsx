@@ -26,7 +26,10 @@ const rateLimiterMiddleware = (ip: string): boolean => {
   return requestTimestamps.length <= rateLimit
 }
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   //check that honeypot is empty
   const honeyPot: string = req.body.lastName
   if (honeyPot) {
@@ -37,17 +40,17 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const origin: string | string[] | undefined = req.headers.origin
 
   // buggy in deployed version to be fixed
-  // let protocol = 'https'
+  let protocol = 'https'
 
-  // if (process.env.NODE_ENV === 'development') {
-  //   protocol = 'http'
-  // }
+  if (process.env.NODE_ENV === 'development') {
+    protocol = 'http'
+  }
 
-  // const domain = process.env.VERCEL_URL
+  const domain = process.env.VERCEL_URL
 
-  // if (origin != `${protocol}://${domain}`) {
-  //   return res.status(403).json({ errorMessage: 'not Authorized' })
-  // }
+  if (origin != `${protocol}://${domain}`) {
+    return res.status(403).json({ errorMessage: 'not Authorized' })
+  }
 
   //rate limiter
   const ipAddress: string | string[] | undefined =
@@ -82,8 +85,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     text: req.body.message + ' || sender email: ' + req.body.email,
   }
 
-  return transporter.sendMail(mailData, function (err: any, info: any) {
-    if (err) return res.status(500).json({ message: 'erreur : ' + err.code })
-    else return res.status(200).json({ message: 'Mail envoyé avec succès' })
-  })
+  const { accepted } = await transporter.sendMail(mailData)
+
+  if (!accepted) return res.status(500).json('Internal Server Error')
+
+  return res
+    .status(200)
+    .json({ origin: origin, domain: `${protocol}://${domain}` })
 }
