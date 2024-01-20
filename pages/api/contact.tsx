@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-const rateLimit: number = 10 // Number of allowed requests per minute
+const rateLimit: number = 1 // Number of allowed requests per minute
 
 interface RateLimiter {
   [ip: string]: number[]
@@ -38,7 +38,6 @@ export default async function handler(
 
   // only allow same origin requests
   const origin: string | string[] | undefined = req.headers.origin
-
 
   let protocol = 'https'
 

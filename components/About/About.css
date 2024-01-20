@@ -1,43 +1,50 @@
 .about {
-    margin-right: 5em;
-    margin-left: 5em;
-    height: 100%;
-    display: flex;
-    align-items: center;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .about-content {
-    height: fit-content;
+  height: fit-content;
 }
 
 .about-icons {
-    height: 2.5rem;
-    padding-top: 1em;
-    margin: 0 auto;
-    display: flex;
-    width: 70%;
-    justify-content: space-evenly;
-    white-space: nowrap;
-    overflow: hidden;
+  height: 2.5rem;
+  padding-top: 1em;
+  margin: 0 auto;
+  display: flex;
+  width: 70%;
+  justify-content: space-evenly;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .about-icon {
-    cursor: pointer;
-    width: 2rem;
-    height: 2rem;
-    transition: all 0.25s;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  transition: all 0.25s;
 }
 
 .about-icon:hover {
-    width: 2.5rem;
-    height: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 @media screen and (min-width: 800px) {
+  /* CSS styles for screens with a width of 800px or larger */
 
-    /* CSS styles for screens with a width of 800px or larger */
+  .about {
+    margin-right: 5em;
+    margin-left: 5em;
+    height: 100%;
+  }
 
-    .about-content {
-        font-size: medium;
-    }
+  .about-content {
+    font-size: medium;
+  }
 }

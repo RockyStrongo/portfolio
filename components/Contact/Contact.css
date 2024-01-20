@@ -1,5 +1,5 @@
 .contact-form-container {
-  width: 65%;
+  width: 70%;
 }
 
 .contact-form {
@@ -45,6 +45,7 @@
   background-color: var(--hero-bg-color);
   border-radius: 0.3rem;
   transition: all 150ms ease-out;
+  box-shadow: rgba(10, 37, 64, 0.35) 0px -1px 3px 0px inset;
 }
 
 .send-button:hover {
@@ -67,6 +68,7 @@
   width: 100%;
   padding: 0.5rem;
   border-radius: 0.5rem;
+  box-shadow: rgba(10, 37, 64, 0.35) 0px -1px 3px 0px inset;
 }
 
 .message-snack-success {

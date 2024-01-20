@@ -1,63 +1,61 @@
 .input-group {
-    position: relative;
-    display: flex;
-    align-items: center
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .input-label {
-    position: absolute;
-    font-size: small;
-    transition: all 150ms ease-out;
-    left: .5rem;    
+  position: absolute;
+  font-size: small;
+  transition: all 150ms ease-out;
+  left: 0.5rem;
 }
 
 .input-label-textarea {
-    top: 0rem;
+  top: 0rem;
 }
 
 .focused {
-    transform: translateY(-120%);
-    left: 0rem;
+  transform: translateY(-120%);
+  left: 0rem;
 }
 
 .input {
-    all: unset;
-    width: 100%;
-    background-color: var(--input-bg-color);
-    font-size: small;
-    border-radius: 0.3rem;
-    padding-left: 0.5rem;   
+  all: unset;
+  width: 100%;
+  background-color: var(--input-bg-color);
+  font-size: small;
+  border-radius: 0.3rem;
+  padding-left: 0.5rem;
+  box-shadow: rgba(10, 37, 64, 0.35) 0px -1px 3px 0px inset;
 }
 
-.input:focus-visible{
-    filter: drop-shadow(0.06rem 0.06rem 0.15rem white);
+.input:focus-visible {
+  filter: drop-shadow(0.06rem 0.06rem 0.15rem white);
 }
 
 textarea.input {
-    height: 6rem;
+  height: 6rem;
 }
 
 @media screen and (min-width: 800px) {
+  /* CSS styles for screens with a width of 800px or larger */
 
-    /* CSS styles for screens with a width of 800px or larger */
+  .input {
+    padding: 0.5rem;
+    font-size: medium;
+  }
 
-    .input {
-        padding: .5rem;
-        font-size: medium;
-    }
+  .input-label {
+    left: 0.5rem;
+    font-size: medium;
+  }
 
-    .input-label {
-        left: 0.5rem;
-        font-size: medium;
-    }
+  .input-label-textarea {
+    top: 0.5rem;
+  }
 
-    .input-label-textarea {
-        top: .5rem;
-    }
-
-    .focused {
-        transform: translateY(-160%);
-    }
-
-
+  .focused {
+    transform: translateY(-160%);
+  }
 }
