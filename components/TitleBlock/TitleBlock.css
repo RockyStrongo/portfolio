@@ -1,62 +1,70 @@
 .title-blockWrapper {
-    height: fit-content;
-    z-index: 3;
+  height: fit-content;
+  z-index: 3;
 }
 
 .title-block {
-    flex-direction: column;
-    align-items: center;
-    height: 0%;
-    display: flex;
-    white-space: nowrap;
-    overflow: hidden;
-    transition: 1s height;
+  flex-direction: column;
+  align-items: center;
+  height: 0%;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 1s height;
 }
 
 .title-blockVisible {
-    height: 100%;
+  height: 100%;
 }
 
 .title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0.3em;
-    transition: 1s all;
-    white-space: pre-wrap;
-    text-align: center;
-    font-size: large;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0.3em;
+  transition: 1s all;
+  white-space: pre-wrap;
+  text-align: center;
+  font-size: large;
 }
 
 .underline--magical {
-    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 0.2em;
-    background-position: 0 88%;
-    transition: background-size 0.75s ease-in;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.75s ease-in;
 }
 
 .underline--magical-full {
-    background-size: 100% 88%;
+  background-size: 100% 88%;
 }
 
-
 .links {
-    display: flex;
-    gap: 0.5em;
-    font-size: small;
+  display: flex;
+  font-size: small;
+  border: solid 0.001rem;
+  border-radius: 1rem;
+  border-color: lightgray;
+  overflow: hidden;
+}
+
+.title-block-link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-right: solid 0.001rem;
+  border-color: lightgray;
 }
 
 @media screen and (min-width: 800px) {
+  /* CSS styles for screens with a width of 800px or larger */
+  .title {
+    font-size: xx-large;
+  }
 
-    /* CSS styles for screens with a width of 800px or larger */
-    .title {
-        font-size: xx-large;
-    }
-
-    .links {
-        font-size: medium;
-    }
+  .links {
+    font-size: medium;
+  }
 }

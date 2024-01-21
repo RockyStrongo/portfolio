@@ -132,9 +132,9 @@ export function Contact() {
                 {message}
               </div>
               {emailState === 'sent' && (
-                <div className='new-email-link' onClick={resetForm}>
+                <button className='new-email-link' onClick={resetForm}>
                   ↻ Send another new email
-                </div>
+                </button>
               )}
             </div>
           )}

@@ -30,13 +30,13 @@ export function TitleBlock({
         <div className='links'>
           {links.map((link, index) => {
             return (
-              <span
+              <button
                 key={index}
-                className={`link ${IsLinkActive(link) && 'link-active'}`}
+                className={`link title-block-link ${IsLinkActive(link) && 'link-active'}`}
                 onClick={() => handleClick(link)}
               >
                 {link}
-              </span>
+              </button>
             )
           })}
         </div>

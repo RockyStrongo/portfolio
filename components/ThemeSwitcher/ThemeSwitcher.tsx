@@ -14,7 +14,7 @@ export default function ThemeSwitcher({
 }: ThemeSwitcherProps) {
   return (
     <div className={`theme-switcher ${isVisible && 'theme-switcherVisible'}`}>
-      <div
+      <button
         className={`theme-item ${
           currentTheme === 'dark' && 'theme-itemSelected'
         }`}
@@ -23,8 +23,8 @@ export default function ThemeSwitcher({
         }}
       >
         dark
-      </div>
-      <div
+      </button>
+      <button
         className={`theme-item ${
           currentTheme === 'auto' && 'theme-itemSelected'
         }`}
@@ -33,8 +33,8 @@ export default function ThemeSwitcher({
         }}
       >
         auto
-      </div>
-      <div
+      </button>
+      <button
         className={`theme-item ${
           currentTheme === 'light' && 'theme-itemSelected'
         }`}
@@ -43,7 +43,7 @@ export default function ThemeSwitcher({
         }}
       >
         light
-      </div>
+      </button>
     </div>
   )
 }

@@ -12,6 +12,11 @@ a {
   cursor: pointer;
 }
 
+button {
+  all: unset;
+  cursor: pointer;
+}
+
 @font-face {
   font-family: 'RedHatMono';
   src: url('/fonts/./Red_Hat_Mono/RedHatMono-VariableFont_wght.ttf');
@@ -20,11 +25,10 @@ a {
   font-display: swap;
 }
 
-
 .link {
   cursor: pointer;
   padding: 0.4rem;
-  background-image: linear-gradient(120deg, #AC2EFF 20%, #5C8EFE 80%);
+  background-image: linear-gradient(120deg, #ac2eff 20%, #5c8efe 80%);
   background-repeat: no-repeat;
   background-size: 100% 0em;
   background-position: 0 88%;
@@ -32,10 +36,15 @@ a {
 }
 
 .link:hover {
-  background-size: 100% 88%;
+  background-size: 100% 100%;
   color: blanchedalmond;
 }
 
 .link-active {
+  background-size: 100% 100%;
+  color: blanchedalmond;
+}
+
+.link-underlined {
   background-size: 100% 0.2em;
 }

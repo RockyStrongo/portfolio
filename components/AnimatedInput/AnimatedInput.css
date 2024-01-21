@@ -12,22 +12,25 @@
 }
 
 .input-label-textarea {
-  top: 0rem;
+  top: 0.5rem;
 }
 
 .focused {
-  transform: translateY(-120%);
+  transform: translateY(-160%);
   left: 0rem;
 }
 
 .input {
   all: unset;
   width: 100%;
+  padding: 0.5rem;
   background-color: var(--input-bg-color);
   font-size: small;
   border-radius: 0.3rem;
   padding-left: 0.5rem;
   box-shadow: rgba(10, 37, 64, 0.35) 0px -1px 3px 0px inset;
+  padding: 0.5rem;
+  font-size: medium;
 }
 
 .input:focus-visible {
@@ -42,20 +45,10 @@ textarea.input {
   /* CSS styles for screens with a width of 800px or larger */
 
   .input {
-    padding: 0.5rem;
     font-size: medium;
   }
 
   .input-label {
-    left: 0.5rem;
     font-size: medium;
-  }
-
-  .input-label-textarea {
-    top: 0.5rem;
-  }
-
-  .focused {
-    transform: translateY(-160%);
   }
 }

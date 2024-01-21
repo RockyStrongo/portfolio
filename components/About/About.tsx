@@ -20,11 +20,7 @@ export function About() {
         <div className='about-content'>
           <p>
             I build web applications. I currently work at
-            <a
-              target='_blank'
-              href='https://citech.fr/'
-              className='link link-active'
-            >
+            <a target='_blank' href='https://citech.fr/' className='link link-underlined'>
               Citech.
             </a>
           </p>
@@ -37,7 +33,7 @@ export function About() {
             I live in
             <a
               target='_blank'
-              className='link link-active'
+              className='link link-underlined'
               href='https://www.google.com/search?q=Aix-en-Provence'
             >
               Aix-en-Provence
@@ -49,7 +45,7 @@ export function About() {
             artwork
             <Link
               target='_blank'
-              className='link link-active'
+              className='link link-underlined'
               href='https://www.instagram.com/outofcontextsimsim/'
             >
               here
