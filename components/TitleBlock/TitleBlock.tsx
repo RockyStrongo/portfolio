@@ -32,7 +32,7 @@ export function TitleBlock({
             return (
               <button
                 key={index}
-                className={`link title-block-link ${IsLinkActive(link) && 'link-active'}`}
+                className={`link title-block-link ${IsLinkActive(link) && 'link-active title-block-link-active'}`}
                 onClick={() => handleClick(link)}
               >
                 {link}

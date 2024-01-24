@@ -49,6 +49,7 @@
   border-radius: 1rem;
   border-color: lightgray;
   overflow: hidden;
+  margin-top: 1.5rem;
 }
 
 .title-block-link {
@@ -56,6 +57,12 @@
   padding-right: 1rem;
   border-right: solid 0.001rem;
   border-color: lightgray;
+  background-color: rgba(219, 229, 243, 0.50);
+  color: black;
+}
+
+.title-block-link-active{
+  color: blanchedalmond;
 }
 
 @media screen and (min-width: 800px) {
