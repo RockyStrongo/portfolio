@@ -19,7 +19,7 @@ export function Projects() {
               Infinite Scroll with Next.js Server Actions: A Simple Guide
             </a>
             <p className='project-card-description'>
-              Tutorial about how to emplement infinite scroll with NextJS
+              Tutorial about how to implement infinite scroll with NextJS
             </p>
           </div>
           <div className='project-card'>

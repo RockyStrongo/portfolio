@@ -1,8 +1,32 @@
+@font-face {
+  font-family: 'RedHatMono';
+  src: url('/fonts/./Red_Hat_Mono/RedHatMono-VariableFont_wght.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RedHatMonoBold';
+  src: url('/fonts/Red_Hat_Mono/static/RedHatMono-Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex';
+  src: url('/fonts/IBMPlexSans/IBMPlexSans-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: RedHatMono;
+  font-family: IBM Plex;
   color: var(--font-color);
   height: var(--doc-height);
 }
@@ -15,14 +39,6 @@ a {
 button {
   all: unset;
   cursor: pointer;
-}
-
-@font-face {
-  font-family: 'RedHatMono';
-  src: url('/fonts/./Red_Hat_Mono/RedHatMono-VariableFont_wght.ttf');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
 }
 
 .link {

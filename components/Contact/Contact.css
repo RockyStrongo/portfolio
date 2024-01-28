@@ -84,14 +84,20 @@
   display: none;
 }
 
+.contact-form-title{
+  font-family: RedHatMono;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
 @media screen and (min-width: 800px) {
   /* CSS styles for screens with a width of 800px or larger */
 
-  .contact-form {
+  .contact-form-inputs {
     gap: 2.25rem;
   }
 
-  .contact-form-inputs {
-    gap: 2.25rem;
+  .contact-form-title{
+    font-size: 1.75rem;
   }
 }

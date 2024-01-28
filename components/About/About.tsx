@@ -19,8 +19,12 @@ export function About() {
       <div className='about'>
         <div className='about-content'>
           <p>
-            I build web applications. I currently work at
-            <a target='_blank' href='https://citech.fr/' className='link link-underlined'>
+            I am a software developper. I currently work at
+            <a
+              target='_blank'
+              href='https://citech.fr/'
+              className='link link-underlined'
+            >
               Citech.
             </a>
           </p>

@@ -18,21 +18,26 @@
 .project-card-description {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  font-size: x-small;
+  font-size: small;
+  color: var(--description-text-color);
 }
 
 .project-card-title {
   font-size: small;
   font-weight: bold;
+  font-family: RedHatMono;
 }
 
 .project-list {
   display: flex;
   gap: 0.5rem;
   flex-direction: column;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .projects-title {
+  font-family: RedHatMonoBold;
   font-size: small;
 }
 
@@ -40,9 +45,9 @@
   /* CSS styles for screens with a width of 800px or larger */
   .projects {
     height: 100%;
-    padding-top: 1rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 0;
   }
 
   .project-card-title {
@@ -50,11 +55,11 @@
   }
 
   .project-card-description {
-    font-size: small;
+    font-size: initial;
   }
 
   .projects-title {
-    font-size: large;
+    font-size: 1.25rem;
   }
 
   .project-list {

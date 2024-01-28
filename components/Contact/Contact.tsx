@@ -81,6 +81,8 @@ export function Contact() {
   return (
     <form className='contact-form-container' onSubmit={handleSubmit}>
       <ContentAppearsAnimation firstClick={clickCount === 1}>
+        <h2 className='contact-form-title'>Contact me</h2>
+
         <div className='contact-form'>
           {emailState != 'sent' && emailState != 'error' && (
             <div className='contact-form-inputs'>

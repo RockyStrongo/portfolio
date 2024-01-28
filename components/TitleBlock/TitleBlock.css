@@ -27,7 +27,8 @@
   transition: 1s all;
   white-space: pre-wrap;
   text-align: center;
-  font-size: large;
+  font-size: x-large;
+  font-family: RedHatMono;
 }
 
 .underline--magical {
@@ -57,11 +58,11 @@
   padding-right: 1rem;
   border-right: solid 0.001rem;
   border-color: lightgray;
-  background-color: rgba(219, 229, 243, 0.50);
+  background-color: rgba(219, 229, 243, 0.5);
   color: black;
 }
 
-.title-block-link-active{
+.title-block-link-active {
   color: blanchedalmond;
 }
 
