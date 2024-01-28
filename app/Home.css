@@ -34,7 +34,7 @@
 }
 
 .hero-splitted {
-  height: 35%;
+  height: 25%;
 }
 
 .content {
@@ -57,7 +57,7 @@
 }
 
 .content-opened {
-  height: 65%;
+  height: 75%;
 }
 
 @media screen and (min-width: 800px) {

@@ -50,7 +50,7 @@
   border-radius: 1rem;
   border-color: lightgray;
   overflow: hidden;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
 }
 
 .title-block-link {
@@ -74,5 +74,6 @@
 
   .links {
     font-size: medium;
+    margin-top: 1.5rem;
   }
 }
