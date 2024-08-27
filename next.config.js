@@ -4,6 +4,7 @@
 // add Content Security Policy directives using a template string.
 
 const nextConfig = {
+    output: "standalone",
     async headers() {
         return [
             {
