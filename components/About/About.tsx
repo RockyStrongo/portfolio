@@ -22,15 +22,15 @@ export function About() {
             I am a software developper. I currently work at
             <a
               target='_blank'
-              href='https://citech.fr/'
+              href='https://www.airbus.com/en'
               className='link link-underlined'
             >
-              Citech.
+              Airbus Helicopters.
             </a>
           </p>
           <p>My main expertise is :</p>
           <ul>
-            <li>Back-end development : NodeJS, Express, Sequelize.</li>
+            <li>Back-end development : NodeJS, NestJS, Prisma, PostgreSQL.</li>
             <li>Front-end development : React, Next.js, Tailwind CSS.</li>
           </ul>
           <p>
