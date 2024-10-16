@@ -50,6 +50,11 @@ export default function Home() {
       setTitleIsVisible(true)
       setAnimationBlurred(true)
     }, TITLE_ANIMATION_DURATION)
+
+    //Cleanup timeout
+    return () => {
+      clearTimeout(timeOut);
+    };
   }, [])
 
   //manage theme changes

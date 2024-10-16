@@ -15,11 +15,18 @@ export function ContentAppearsAnimation({
   const [contentIsVisible, setContentIsVisible] = useState(false)
 
   useEffect(() => {
-    firstClick
-      ? setTimeout(() => {
-          setContentIsVisible(true)
-        }, FIRST_CLICK_DURATION)
-      : setContentIsVisible(true)
+
+    if (firstClick) {
+      const timeout = setTimeout(() => {
+        setContentIsVisible(true)
+      }, FIRST_CLICK_DURATION)
+
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+
+    setContentIsVisible(true)
   }, [firstClick])
 
   return (
