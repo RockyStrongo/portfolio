@@ -39,7 +39,7 @@ export function Projects() {
         <h2 className='projects-title'>Projects</h2>
         <div className='project-card'>
           <a
-            href='https://leaflover-front.simonferlat.com/'
+            href='https://github.com/RockyStrongo/leaf-lover-back'
             target='_blank'
             className='project-card-title'
           >
